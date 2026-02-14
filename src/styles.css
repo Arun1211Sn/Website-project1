@@ -455,7 +455,6 @@ img { max-width: 100%; display: block; }
 }
 
 .service-card:hover {
-  transform: translateY(-8px) !important;
   box-shadow: var(--shadow-lg);
   border-color: rgba(240,180,41,0.3);
 }
@@ -921,6 +920,94 @@ img { max-width: 100%; display: block; }
 .scroll-top:hover {
   background: var(--gold-light);
   transform: translateY(-3px);
+}
+
+/* ===========================
+   HERO CANVAS
+   =========================== */
+#heroCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ===========================
+   SCROLL PROGRESS BAR
+   =========================== */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(240, 180, 41, 0.7);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ===========================
+   CUSTOM CURSOR
+   =========================== */
+#cursor-dot,
+#cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+#cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+}
+
+#cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 2px solid rgba(240, 180, 41, 0.6);
+  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+#cursor-ring.expanded {
+  width: 52px;
+  height: 52px;
+  border-color: var(--gold);
+}
+
+@media (hover: none) {
+  #cursor-dot,
+  #cursor-ring { display: none; }
+}
+
+/* ===========================
+   CARD SHINE OVERLAY
+   =========================== */
+.card-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--shine-x, 50%) var(--shine-y, 50%),
+    rgba(255, 255, 255, 0.12) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.service-card:hover .card-shine {
+  opacity: 1;
 }
 
 /* ===========================

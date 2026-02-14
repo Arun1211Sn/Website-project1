@@ -1,5 +1,6 @@
 import { services } from './services-data';
 import type { FormData, ValidationResult } from './types';
+import { initHeroScene } from './hero-scene';
 
 // ===========================
 // NAVBAR
@@ -70,6 +71,7 @@ function renderServices(): void {
     .map(
       (service) => `
     <div class="service-card" data-id="${service.id}">
+      <div class="card-shine"></div>
       <div class="service-icon-wrap" style="background:${service.bgColor}">
         ${service.icon}
       </div>
@@ -270,6 +272,126 @@ function initSmoothScroll(): void {
 }
 
 // ===========================
+// SCROLL PROGRESS BAR
+// ===========================
+function initScrollProgress(): void {
+  const bar = document.getElementById('scrollProgress');
+  if (!bar) return;
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = total > 0 ? `${(scrolled / total) * 100}%` : '0%';
+  }, { passive: true });
+}
+
+// ===========================
+// CUSTOM CURSOR
+// ===========================
+function initCustomCursor(): void {
+  const dot  = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  if (!dot || !ring) return;
+
+  // Only on pointer devices
+  if (!window.matchMedia('(hover: hover)').matches) return;
+
+  let dotX  = 0, dotY  = 0;
+  let rafId = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    dotX = e.clientX;
+    dotY = e.clientY;
+    dot.style.transform = `translate(calc(${dotX}px - 50%), calc(${dotY}px - 50%))`;
+  });
+
+  function loopRing(): void {
+    rafId = requestAnimationFrame(loopRing);
+    // Lazy lerp for ring
+    const mx = parseFloat(ring!.dataset['x'] ?? '0');
+    const my = parseFloat(ring!.dataset['y'] ?? '0');
+    const nx = mx + (dotX - mx) * 0.15;
+    const ny = my + (dotY - my) * 0.15;
+    ring!.dataset['x'] = String(nx);
+    ring!.dataset['y'] = String(ny);
+    ring!.style.transform = `translate(calc(${nx}px - 50%), calc(${ny}px - 50%))`;
+  }
+  loopRing();
+
+  const expandTargets = 'a, button, .service-card, .btn, .nav-link';
+  document.querySelectorAll(expandTargets).forEach((el) => {
+    el.addEventListener('mouseenter', () => ring.classList.add('expanded'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('expanded'));
+  });
+
+  // Cleanup if page hidden
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) cancelAnimationFrame(rafId);
+    else loopRing();
+  });
+}
+
+// ===========================
+// 3D CARD TILT
+// ===========================
+function initCardTilt(): void {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.matchMedia('(hover: hover)').matches) return;
+
+  document.querySelectorAll<HTMLElement>('.service-card').forEach((card) => {
+    const shine = card.querySelector<HTMLElement>('.card-shine');
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const cx   = rect.left + rect.width  / 2;
+      const cy   = rect.top  + rect.height / 2;
+      const dx   = (e.clientX - cx) / (rect.width  / 2); // -1 … 1
+      const dy   = (e.clientY - cy) / (rect.height / 2); // -1 … 1
+
+      const rotateX = -dy * 10;
+      const rotateY =  dx * 10;
+
+      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+
+      if (shine) {
+        const shineX = ((e.clientX - rect.left) / rect.width ) * 100;
+        const shineY = ((e.clientY - rect.top)  / rect.height) * 100;
+        shine.style.setProperty('--shine-x', `${shineX}%`);
+        shine.style.setProperty('--shine-y', `${shineY}%`);
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
+// ===========================
+// MAGNETIC BUTTONS
+// ===========================
+function initMagneticButtons(): void {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.matchMedia('(hover: hover)').matches) return;
+
+  document.querySelectorAll<HTMLElement>('.hero-buttons .btn').forEach((btn) => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const cx   = rect.left + rect.width  / 2;
+      const cy   = rect.top  + rect.height / 2;
+      const dx   = (e.clientX - cx) / (rect.width  / 2);
+      const dy   = (e.clientY - cy) / (rect.height / 2);
+
+      btn.style.transform = `translate(${dx * 6}px, ${dy * 4}px)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+}
+
+// ===========================
 // INIT
 // ===========================
 document.addEventListener('DOMContentLoaded', () => {
@@ -280,4 +402,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollTop();
   setFooterYear();
   initSmoothScroll();
+  initScrollProgress();
+  initCustomCursor();
+  initCardTilt();
+  initMagneticButtons();
+  initHeroScene();
 });

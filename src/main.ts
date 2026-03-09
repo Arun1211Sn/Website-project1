@@ -215,18 +215,46 @@ function initContactForm(): void {
 
     if (!valid) return;
 
-    // Simulate form submission
+    // Build WhatsApp message from form data
+    const serviceLabels: Record<string, string> = {
+      'land-buy-sell': 'Land Buying & Selling',
+      'plots':         'Plots Selling',
+      'farm-land':     'Farm Land Selling',
+      'painting':      'Building Painting',
+      'tree-cutting':  'Tree Cutting & Farm Land Tree Cutting',
+      'land-cleaning': 'Vacant Land Cleaning & Sand',
+    };
+
+    const serviceName = formData.service
+      ? serviceLabels[formData.service] ?? formData.service
+      : 'Not specified';
+
+    const msgLines = [
+      'Hello Thirupathi S.T.S Groups Realty,',
+      '',
+      `Name: ${formData.name}`,
+      `Phone: ${formData.phone}`,
+      `Service: ${serviceName}`,
+    ];
+    if (formData.message.trim()) {
+      msgLines.push(`Message: ${formData.message.trim()}`);
+    }
+
+    const whatsappURL =
+      `https://wa.me/919884836380?text=${encodeURIComponent(msgLines.join('\n'))}`;
+
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
+    submitBtn.textContent = 'Opening WhatsApp...';
 
     setTimeout(() => {
+      window.open(whatsappURL, '_blank', 'noopener,noreferrer');
       submitBtn.textContent = 'Send Enquiry';
       submitBtn.disabled = false;
       form.reset();
       successEl.classList.add('visible');
 
       setTimeout(() => successEl.classList.remove('visible'), 5000);
-    }, 1200);
+    }, 400);
   });
 }
 

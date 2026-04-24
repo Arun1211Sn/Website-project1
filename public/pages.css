@@ -1,0 +1,231 @@
+/* Shared styles for static pages (legal, guides, about, contact) */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #0a1628;
+  --navy-light: #0d1f3c;
+  --blue: #1a3a6e;
+  --blue-light: #2558a8;
+  --gold: #f0b429;
+  --gold-light: #fcd34d;
+  --white: #ffffff;
+  --gray-100: #f8fafc;
+  --gray-200: #e2e8f0;
+  --gray-400: #94a3b8;
+  --gray-600: #475569;
+  --text: #1e293b;
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+}
+
+a { text-decoration: none; color: var(--blue); }
+a:hover { color: var(--blue-light); }
+ul, ol { padding-left: 1.4rem; margin: 0.75rem 0; }
+li { margin: 0.35rem 0; }
+
+img { max-width: 100%; display: block; }
+
+/* Header */
+.page-header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 1rem 0;
+  box-shadow: var(--shadow);
+}
+.page-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-header a { color: var(--white); }
+.page-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--gold);
+  color: var(--navy);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+.logo-sub {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--gray-400);
+  font-weight: 500;
+}
+.page-header nav ul {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+}
+.page-header nav a:hover { color: var(--gold); }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Hero / intro */
+.page-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  color: var(--white);
+  padding: 4rem 0 3rem;
+  text-align: center;
+}
+.page-hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  margin-bottom: 0.5rem;
+}
+.page-hero p {
+  color: var(--gray-200);
+  max-width: 640px;
+  margin: 0 auto;
+}
+.page-hero .crumbs {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+  margin-bottom: 0.75rem;
+}
+.page-hero .crumbs a { color: var(--gold); }
+
+/* Content */
+article.page-content {
+  padding: 3rem 0 4rem;
+}
+article.page-content h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0 0.8rem;
+  color: var(--navy);
+}
+article.page-content h3 {
+  font-size: 1.15rem;
+  margin: 1.4rem 0 0.5rem;
+  color: var(--blue);
+}
+article.page-content p {
+  margin: 0.75rem 0;
+}
+article.page-content strong { color: var(--navy); }
+
+.callout {
+  background: var(--gray-100);
+  border-left: 4px solid var(--gold);
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  margin-top: 1rem;
+}
+
+.guide-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.guide-card {
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.guide-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.guide-card h3 {
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+.guide-card p {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.page-footer {
+  background: var(--navy);
+  color: var(--gray-200);
+  padding: 2.5rem 0 1.5rem;
+  margin-top: 3rem;
+}
+.page-footer .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.page-footer h4 {
+  color: var(--white);
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+.page-footer ul { list-style: none; padding: 0; }
+.page-footer li { margin: 0.4rem 0; }
+.page-footer a { color: var(--gray-200); }
+.page-footer a:hover { color: var(--gold); }
+.page-footer .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--gray-400);
+}
+
+/* Form */
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 600px;
+}
+.contact-form label { font-weight: 600; color: var(--navy); }
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.contact-form button {
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.contact-form button:hover { background: var(--gold-light); }
+
+@media (max-width: 640px) {
+  .page-header nav ul { gap: 0.75rem; font-size: 0.9rem; }
+  .logo-sub { display: none; }
+}

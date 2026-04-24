@@ -25,6 +25,7 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="#home" class="nav-link">Home</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="/guides/" class="nav-link">Guides</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -90,20 +91,92 @@
           <p class="section-desc">Expert solutions for all your land, property, and maintenance needs in Chennai and surrounding areas.</p>
         </div>
         <div class="services-grid" id="servicesGrid">
-          <!-- Populated by TypeScript -->
-        </div>
-
-        <!-- AdSense Ad Unit -->
-        <div class="ad-container" style="margin: 3rem auto; max-width: 1200px; text-align: center;">
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-4589248435119779"
-               data-ad-slot="3778019554"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-          <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
+          <!-- Pre-rendered so search engines and AdSense reviewers see content immediately.
+               The TypeScript renderer replaces this markup on page load with the same content. -->
+          <div class="service-card" data-id="land-buy-sell">
+            <div class="card-shine"></div>
+            <div class="service-icon-wrap" style="background:rgba(26,58,110,0.08)">🏞️</div>
+            <span class="service-tag" style="color:#1a3a6e;background:rgba(26,58,110,0.1)">Real Estate</span>
+            <h3 class="service-title">Land Buying &amp; Selling</h3>
+            <p class="service-desc">Expert assistance for buying and selling land in Chennai and surrounding areas. We handle all documentation, legal checks, and negotiations on your behalf.</p>
+            <div class="service-features">
+              <div class="service-feature"><span class="service-feature-dot" style="background:#1a3a6e"></span><span>Legal document verification</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#1a3a6e"></span><span>Fair market valuation</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#1a3a6e"></span><span>Negotiation &amp; deal closure</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#1a3a6e"></span><span>Registration support</span></div>
+            </div>
+            <a href="#contact" class="service-cta" style="color:#1a3a6e">Enquire Now <span>→</span></a>
+          </div>
+          <div class="service-card" data-id="plots">
+            <div class="card-shine"></div>
+            <div class="service-icon-wrap" style="background:rgba(6,95,70,0.08)">📐</div>
+            <span class="service-tag" style="color:#065f46;background:rgba(6,95,70,0.1)">Property</span>
+            <h3 class="service-title">Plots Selling</h3>
+            <p class="service-desc">Premium residential and commercial plots in prime locations across Chennai. Choose from a wide range of sizes and layouts to match your investment goals.</p>
+            <div class="service-features">
+              <div class="service-feature"><span class="service-feature-dot" style="background:#065f46"></span><span>Residential &amp; commercial plots</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#065f46"></span><span>DTCP / CMDA approved</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#065f46"></span><span>Clear title guarantee</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#065f46"></span><span>Flexible payment options</span></div>
+            </div>
+            <a href="#contact" class="service-cta" style="color:#065f46">Enquire Now <span>→</span></a>
+          </div>
+          <div class="service-card" data-id="farm-land">
+            <div class="card-shine"></div>
+            <div class="service-icon-wrap" style="background:rgba(120,53,15,0.08)">🌾</div>
+            <span class="service-tag" style="color:#78350f;background:rgba(120,53,15,0.1)">Agriculture</span>
+            <h3 class="service-title">Farm Land Selling</h3>
+            <p class="service-desc">Agricultural land and farm plots available across Tamil Nadu. Ideal for cultivation, investment, or eco-living. We ensure hassle-free transfers.</p>
+            <div class="service-features">
+              <div class="service-feature"><span class="service-feature-dot" style="background:#78350f"></span><span>Agricultural land listings</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#78350f"></span><span>Water source verification</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#78350f"></span><span>Soil &amp; fertility reports</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#78350f"></span><span>Patta / Chitta documentation</span></div>
+            </div>
+            <a href="#contact" class="service-cta" style="color:#78350f">Enquire Now <span>→</span></a>
+          </div>
+          <div class="service-card" data-id="painting">
+            <div class="card-shine"></div>
+            <div class="service-icon-wrap" style="background:rgba(107,33,168,0.08)">🎨</div>
+            <span class="service-tag" style="color:#6b21a8;background:rgba(107,33,168,0.1)">Maintenance</span>
+            <h3 class="service-title">Building Painting</h3>
+            <p class="service-desc">Professional interior and exterior painting services for residential and commercial buildings. Quality materials, skilled painters, and clean finishes.</p>
+            <div class="service-features">
+              <div class="service-feature"><span class="service-feature-dot" style="background:#6b21a8"></span><span>Interior &amp; exterior painting</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#6b21a8"></span><span>Premium quality paints</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#6b21a8"></span><span>Waterproof coatings</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#6b21a8"></span><span>On-time completion</span></div>
+            </div>
+            <a href="#contact" class="service-cta" style="color:#6b21a8">Enquire Now <span>→</span></a>
+          </div>
+          <div class="service-card" data-id="tree-cutting">
+            <div class="card-shine"></div>
+            <div class="service-icon-wrap" style="background:rgba(20,83,45,0.08)">🌳</div>
+            <span class="service-tag" style="color:#14532d;background:rgba(20,83,45,0.1)">Clearance</span>
+            <h3 class="service-title">Tree Cutting &amp; Farm Land Tree Cutting</h3>
+            <p class="service-desc">Safe and professional tree felling, trimming, and complete farm land clearing. Equipped with modern tools for efficient and damage-free operations.</p>
+            <div class="service-features">
+              <div class="service-feature"><span class="service-feature-dot" style="background:#14532d"></span><span>Residential tree cutting</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#14532d"></span><span>Farm land clearance</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#14532d"></span><span>Root removal</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#14532d"></span><span>Debris disposal included</span></div>
+            </div>
+            <a href="#contact" class="service-cta" style="color:#14532d">Enquire Now <span>→</span></a>
+          </div>
+          <div class="service-card" data-id="land-cleaning">
+            <div class="card-shine"></div>
+            <div class="service-icon-wrap" style="background:rgba(146,64,14,0.08)">🏗️</div>
+            <span class="service-tag" style="color:#92400e;background:rgba(146,64,14,0.1)">Land Services</span>
+            <h3 class="service-title">Vacant Land Cleaning &amp; Sand</h3>
+            <p class="service-desc">Complete vacant land cleaning, levelling, and sand filling services. We prepare your land for construction or handover in ready-to-use condition.</p>
+            <div class="service-features">
+              <div class="service-feature"><span class="service-feature-dot" style="background:#92400e"></span><span>Waste &amp; debris removal</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#92400e"></span><span>Land levelling &amp; grading</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#92400e"></span><span>Quality sand filling</span></div>
+              <div class="service-feature"><span class="service-feature-dot" style="background:#92400e"></span><span>Site preparation for construction</span></div>
+            </div>
+            <a href="#contact" class="service-cta" style="color:#92400e">Enquire Now <span>→</span></a>
+          </div>
         </div>
       </div>
     </section>
@@ -163,18 +236,45 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- AdSense Ad Unit -->
-        <div class="ad-container" style="margin: 3rem auto; max-width: 1200px; text-align: center;">
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-4589248435119779"
-               data-ad-slot="3778019554"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-          <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
+    <!-- Resources / Guides Section -->
+    <section id="guides" class="services" style="background:#f8fafc;">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Learn &amp; Decide</p>
+          <h2 class="section-title">Land &amp; Property Guides</h2>
+          <p class="section-desc">Plain-language notes on Tamil Nadu real-estate documents, approvals, taxes, and site preparation — written for first-time buyers, sellers, and absentee owners.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;max-width:1200px;margin:0 auto;">
+          <a href="/guides/patta-chitta-guide.html" style="display:block;padding:1.4rem;background:#fff;border:1px solid #e2e8f0;border-radius:12px;color:#1e293b;transition:transform .2s,box-shadow .2s;">
+            <h3 style="color:#0a1628;margin-bottom:.4rem;font-size:1.05rem;">Patta &amp; Chitta: a practical guide</h3>
+            <p style="color:#475569;font-size:.9rem;line-height:1.5;">What these records are, how to read them, and how to apply online on the TN eServices portal.</p>
+          </a>
+          <a href="/guides/dtcp-vs-cmda.html" style="display:block;padding:1.4rem;background:#fff;border:1px solid #e2e8f0;border-radius:12px;color:#1e293b;">
+            <h3 style="color:#0a1628;margin-bottom:.4rem;font-size:1.05rem;">DTCP vs CMDA approvals</h3>
+            <p style="color:#475569;font-size:.9rem;line-height:1.5;">The difference between Tamil Nadu's two main layout-approval authorities, and why it matters before a purchase.</p>
+          </a>
+          <a href="/guides/stamp-duty-tamil-nadu.html" style="display:block;padding:1.4rem;background:#fff;border:1px solid #e2e8f0;border-radius:12px;color:#1e293b;">
+            <h3 style="color:#0a1628;margin-bottom:.4rem;font-size:1.05rem;">Stamp duty &amp; registration</h3>
+            <p style="color:#475569;font-size:.9rem;line-height:1.5;">Current rates in Tamil Nadu, how they're calculated on guideline value, and what else appears at registration.</p>
+          </a>
+          <a href="/guides/land-buying-checklist.html" style="display:block;padding:1.4rem;background:#fff;border:1px solid #e2e8f0;border-radius:12px;color:#1e293b;">
+            <h3 style="color:#0a1628;margin-bottom:.4rem;font-size:1.05rem;">Land buying checklist for Chennai</h3>
+            <p style="color:#475569;font-size:.9rem;line-height:1.5;">Twenty document and site checks to complete before you pay an advance on a plot.</p>
+          </a>
+          <a href="/guides/farm-land-vs-residential.html" style="display:block;padding:1.4rem;background:#fff;border:1px solid #e2e8f0;border-radius:12px;color:#1e293b;">
+            <h3 style="color:#0a1628;margin-bottom:.4rem;font-size:1.05rem;">Farm land vs residential plot</h3>
+            <p style="color:#475569;font-size:.9rem;line-height:1.5;">Legal, financial, and practical differences — and which one fits your goal.</p>
+          </a>
+          <a href="/guides/vacant-land-maintenance.html" style="display:block;padding:1.4rem;background:#fff;border:1px solid #e2e8f0;border-radius:12px;color:#1e293b;">
+            <h3 style="color:#0a1628;margin-bottom:.4rem;font-size:1.05rem;">Maintaining a vacant plot</h3>
+            <p style="color:#475569;font-size:.9rem;line-height:1.5;">Why unattended land becomes a problem, what it costs to keep safe, and how to protect ownership.</p>
+          </a>
+        </div>
+        <div style="text-align:center;margin-top:2rem;">
+          <a href="/guides/" class="btn btn-primary">See all guides</a>
         </div>
       </div>
     </section>
@@ -269,19 +369,27 @@
             <ul>
               <li><a href="#home">Home</a></li>
               <li><a href="#services">Services</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
             </ul>
           </div>
           <div class="footer-services-list">
-            <h4>Services</h4>
+            <h4>Guides</h4>
             <ul>
-              <li>Land Buying & Selling</li>
-              <li>Plots Selling</li>
-              <li>Farm Land Selling</li>
-              <li>Building Painting</li>
-              <li>Tree Cutting</li>
-              <li>Vacant Land Cleaning</li>
+              <li><a href="/guides/patta-chitta-guide.html">Patta &amp; Chitta Guide</a></li>
+              <li><a href="/guides/dtcp-vs-cmda.html">DTCP vs CMDA</a></li>
+              <li><a href="/guides/stamp-duty-tamil-nadu.html">Stamp Duty in TN</a></li>
+              <li><a href="/guides/land-buying-checklist.html">Land Buying Checklist</a></li>
+              <li><a href="/guides/farm-land-vs-residential.html">Farm Land vs Residential</a></li>
+              <li><a href="/guides/vacant-land-maintenance.html">Vacant Land Maintenance</a></li>
+            </ul>
+          </div>
+          <div class="footer-services-list">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="/terms.html">Terms of Service</a></li>
+              <li><a href="/disclaimer.html">Disclaimer</a></li>
             </ul>
           </div>
           <div class="footer-contact">

@@ -13,7 +13,7 @@
  * WhatsApp hand-off may well have succeeded.
  */
 
-export const config = { runtime: 'nodejs' };
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 type Payload = {
   name?: unknown;
@@ -39,21 +39,26 @@ const SERVICE_LABELS: Record<string, string> = {
   'land-cleaning': 'Vacant Land Cleaning & Sand',
 };
 
-export default async function handler(request: Request): Promise<Response> {
-  if (request.method !== 'POST') {
-    return Response.json({ error: 'Method not allowed.' }, { status: 405 });
+export default async function handler(
+  req: VercelRequest,
+  res: VercelResponse,
+): Promise<void> {
+  if (req.method !== 'POST') {
+    res.status(405).json({ error: 'Method not allowed.' });
+    return;
   }
 
-  let body: Payload;
-  try {
-    // Request.json() is typed unknown; every field is re-validated below.
-    body = (await request.json()) as Payload;
-  } catch {
-    return Response.json({ error: 'Invalid request body.' }, { status: 400 });
-  }
+  // Vercel has already parsed the JSON body; a malformed one arrives as a
+  // string, which the validation below rejects on its own.
+  const body: Payload = (typeof req.body === 'object' && req.body !== null
+    ? req.body
+    : {}) as Payload;
 
   // Silently accept honeypot submissions so bots get no signal.
-  if (asString(body.website)) return Response.json({ ok: true });
+  if (asString(body.website)) {
+    res.status(200).json({ ok: true });
+    return;
+  }
 
   const name = asString(body.name);
   const phone = asString(body.phone);
@@ -69,7 +74,8 @@ export default async function handler(request: Request): Promise<Response> {
   if (message.length > 5000) errors.message = 'Please keep it under 5000 characters.';
 
   if (Object.keys(errors).length > 0) {
-    return Response.json({ errors }, { status: 422 });
+    res.status(422).json({ errors });
+    return;
   }
 
   const lead = {
@@ -125,5 +131,5 @@ export default async function handler(request: Request): Promise<Response> {
     console.error('[lead] Delivery failed:', error, lead);
   }
 
-  return Response.json({ ok: true });
+  res.status(200).json({ ok: true });
 }

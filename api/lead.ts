@@ -46,7 +46,8 @@ export default async function handler(request: Request): Promise<Response> {
 
   let body: Payload;
   try {
-    body = await request.json();
+    // Request.json() is typed unknown; every field is re-validated below.
+    body = (await request.json()) as Payload;
   } catch {
     return Response.json({ error: 'Invalid request body.' }, { status: 400 });
   }

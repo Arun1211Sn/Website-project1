@@ -1,0 +1,18 @@
+{
+  // The root tsconfig targets the browser bundle and only includes src/. This
+  // directory runs on Vercel's Node runtime instead, so it needs the Node
+  // globals (process.env for the delivery credentials) that the DOM-oriented
+  // root config does not provide.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022"],
+    "types": ["node"],
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "isolatedModules": true
+  },
+  "include": ["."]
+}

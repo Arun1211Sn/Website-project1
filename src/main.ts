@@ -243,18 +243,53 @@ function initContactForm(): void {
     const whatsappURL =
       `https://wa.me/919884836380?text=${encodeURIComponent(msgLines.join('\n'))}`;
 
+    // Record the lead server-side first, so the enquiry survives even if the
+    // WhatsApp hand-off below never lands. Deliberately not awaited: the
+    // window.open that follows must stay inside the user-activation window, and
+    // awaiting a fetch would spend it. Failures are non-fatal by design.
+    void fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: formData.name,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+      }),
+      keepalive: true,
+    }).catch(() => {
+      /* The WhatsApp hand-off is the primary channel; ignore. */
+    });
+
+    // Brief busy state. Set and cleared synchronously either side of
+    // window.open so the user gesture is never spent on a timer.
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Opening WhatsApp...';
+    submitBtn.textContent = 'Sending...';
 
-    setTimeout(() => {
-      window.open(whatsappURL, '_blank', 'noopener,noreferrer');
-      submitBtn.textContent = 'Send Enquiry';
-      submitBtn.disabled = false;
-      form.reset();
+    // Opened synchronously and NOT inside a setTimeout. Browsers only honour
+    // window.open while the user gesture that triggered it is still active, and
+    // a timer breaks that chain — which is why mobile Safari and Chrome used to
+    // block this silently while the form still claimed success.
+    const opened = window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+
+    submitBtn.textContent = 'Send Enquiry';
+    submitBtn.disabled = false;
+    form.reset();
+
+    if (opened && !opened.closed) {
+      successEl.textContent = "✓ WhatsApp opened! We'll respond to your enquiry shortly.";
       successEl.classList.add('visible');
-
       setTimeout(() => successEl.classList.remove('visible'), 5000);
-    }, 400);
+      return;
+    }
+
+    // Popup blocked, or no handler for the link. Say so honestly and hand over a
+    // link the customer can tap themselves, rather than claiming it worked.
+    successEl.innerHTML =
+      "✓ Enquiry received — we have your details and will call you back. " +
+      '<a href="' + whatsappURL + '" target="_blank" rel="noopener noreferrer">' +
+      'Tap here to also send it on WhatsApp</a>.';
+    successEl.classList.add('visible');
   });
 }
 

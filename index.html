@@ -31,8 +31,15 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Noto+Serif:wght@700;800&family=Noto+Sans+Tamil:wght@600;700&display=swap" />
-    <link rel="preload" as="image" href="/images/office-thoraipakkam.webp" fetchpriority="high" />
+    <!-- Fonts load without blocking the first paint; the Tamil face is cut down
+         to the characters of the company name, which is all the page uses it for. -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Noto+Serif:wght@700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@600;700&display=swap&text=-%E0%AE%8E%E0%AE%95%E0%AE%9F%E0%AE%A4%E0%AE%AA%E0%AE%AF%E0%AE%B0%E0%AE%B2%E0%AE%B8%E0%AE%BE%E0%AE%BF%E0%AF%81%E0%AF%82%E0%AF%8D" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Noto+Serif:wght@700;800&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@600;700&display=swap&text=-%E0%AE%8E%E0%AE%95%E0%AE%9F%E0%AE%A4%E0%AE%AA%E0%AE%AF%E0%AE%B0%E0%AE%B2%E0%AE%B8%E0%AE%BE%E0%AE%BF%E0%AF%81%E0%AF%82%E0%AF%8D" />
+    </noscript>
+    <link rel="preload" as="image" href="/images/office-thoraipakkam.webp" imagesrcset="/images/office-thoraipakkam-480.webp 480w, /images/office-thoraipakkam.webp 900w" imagesizes="(max-width: 900px) 92vw, 460px" fetchpriority="high" />
     <link rel="stylesheet" href="/src/styles.css" />
 
     <script type="application/ld+json">
@@ -94,6 +101,109 @@
           }
         },
         {
+          "@type": "ItemList",
+          "@id": "https://www.thirupathirealestates.com/#properties",
+          "name": "Properties listed by Thirupathi S.T.S Groups Realty",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "RealEstateListing",
+                "name": "16 Grounds on GST Road, Kattankulathur",
+                "url": "https://www.thirupathirealestates.com/#gst-road-kattankulathur",
+                "contentLocation": {
+                  "@type": "Place",
+                  "name": "Kattankulathur, GST Road, Chengalpattu district"
+                },
+                "offeredBy": {
+                  "@id": "https://www.thirupathirealestates.com/#business"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "RealEstateListing",
+                "name": "Under-construction Building, OMR Thoraipakkam",
+                "url": "https://www.thirupathirealestates.com/#omr-thoraipakkam-building",
+                "contentLocation": {
+                  "@type": "Place",
+                  "name": "Thoraipakkam, OMR, Chennai"
+                },
+                "offeredBy": {
+                  "@id": "https://www.thirupathirealestates.com/#business"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "RealEstateListing",
+                "name": "9,000 sq ft Land in Thoraipakkam, OMR",
+                "url": "https://www.thirupathirealestates.com/#omr-thoraipakkam-9000-sqft",
+                "contentLocation": {
+                  "@type": "Place",
+                  "name": "Thoraipakkam, OMR, Chennai"
+                },
+                "offeredBy": {
+                  "@id": "https://www.thirupathirealestates.com/#business"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "RealEstateListing",
+                "name": "Building under Construction, Anandham Nagar",
+                "url": "https://www.thirupathirealestates.com/#anandham-nagar-building",
+                "contentLocation": {
+                  "@type": "Place",
+                  "name": "Anandham Nagar, Thoraipakkam, Chennai"
+                },
+                "offeredBy": {
+                  "@id": "https://www.thirupathirealestates.com/#business"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "RealEstateListing",
+                "name": "Sakthi Garden Plot 70 — 750 to 3,000 sq ft",
+                "url": "https://www.thirupathirealestates.com/#sakthi-garden-plot-70",
+                "contentLocation": {
+                  "@type": "Place",
+                  "name": "Sakthi Garden"
+                },
+                "offeredBy": {
+                  "@id": "https://www.thirupathirealestates.com/#business"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "RealEstateListing",
+                "name": "100 Acres Contiguous Land off SH-118",
+                "url": "https://www.thirupathirealestates.com/#kaithandalam-100-acres",
+                "contentLocation": {
+                  "@type": "Place",
+                  "name": "Kaithandalam & Kattuputhur, Uthiramerur, Kancheepuram district"
+                },
+                "offeredBy": {
+                  "@id": "https://www.thirupathirealestates.com/#business"
+                }
+              }
+            }
+          ]
+        },
+        {
           "@type": "WebSite",
           "@id": "https://www.thirupathirealestates.com/#website",
           "url": "https://www.thirupathirealestates.com/",
@@ -105,9 +215,27 @@
     }
     </script>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4589248435119779"
-         crossorigin="anonymous"></script>
+    <!-- Google AdSense. The account meta keeps the site verified; the script
+         itself (~150 KB) waits until the visitor interacts or the page has been
+         open 5 s, so it no longer delays the first paint. -->
+    <meta name="google-adsense-account" content="ca-pub-4589248435119779" />
+    <script>
+      (function () {
+        var done = false, events = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
+        function load() {
+          if (done) return;
+          done = true;
+          events.forEach(function (e) { removeEventListener(e, load); });
+          var s = document.createElement('script');
+          s.async = true;
+          s.crossOrigin = 'anonymous';
+          s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4589248435119779';
+          document.head.appendChild(s);
+        }
+        events.forEach(function (e) { addEventListener(e, load, { once: true, passive: true }); });
+        addEventListener('load', function () { setTimeout(load, 5000); });
+      })();
+    </script>
   </head>
   <body>
     <!-- Navbar -->
@@ -138,9 +266,6 @@
     <!-- Scroll progress bar -->
     <div id="scrollProgress"></div>
 
-    <!-- Custom cursor -->
-    <div id="cursor-dot"></div>
-    <div id="cursor-ring"></div>
 
     <main>
     <!-- Hero: echoes the shop signboard -->
@@ -166,21 +291,21 @@
           </div>
           <div class="hero-stats">
             <div class="stat-item">
-              <span class="stat-number" data-target="500">500</span><span>+</span>
+              <span class="stat-number">500</span><span>+</span>
               <span class="stat-label">Properties Sold</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number" data-target="15">15</span><span>+</span>
+              <span class="stat-number">15</span><span>+</span>
               <span class="stat-label">Years Experience</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number" data-target="1000">1,000</span><span>+</span>
+              <span class="stat-number">1,000</span><span>+</span>
               <span class="stat-label">Happy Clients</span>
             </div>
           </div>
         </div>
         <figure class="hero-photo">
-          <img src="/images/office-thoraipakkam.webp" width="900" height="1056" fetchpriority="high"
+          <img src="/images/office-thoraipakkam.webp" srcset="/images/office-thoraipakkam-480.webp 480w, /images/office-thoraipakkam.webp 900w" sizes="(max-width: 900px) 92vw, 460px" width="900" height="1056" fetchpriority="high"
                alt="Thirupathi S.T.S Groups Realty office front and signboard on V.O.C Street, Thoraipakkam, Chennai" />
           <figcaption>Our office · V.O.C Street, Thoraipakkam</figcaption>
         </figure>
@@ -207,7 +332,7 @@
         </div>
 
         <div class="listings-grid">
-          <article class="listing-card featured">
+          <article class="listing-card featured" id="gst-road-kattankulathur">
             <div class="listing-media">
               <img class="contain" src="/images/gst-road-kattankulathur-plan.svg" width="560" height="520" loading="lazy" decoding="async"
                    alt="Site sketch of the 16-ground GST Road property at Kattankulathur with 170 ft service-road frontage next to the BDO office" />
@@ -230,9 +355,9 @@
             </div>
           </article>
 
-          <article class="listing-card">
+          <article class="listing-card" id="omr-thoraipakkam-building">
             <div class="listing-media">
-              <img src="/images/building-omr-thoraipakkam.webp" width="800" height="1422" loading="lazy" decoding="async"
+              <img src="/images/building-omr-thoraipakkam.webp" srcset="/images/building-omr-thoraipakkam-480.webp 480w, /images/building-omr-thoraipakkam.webp 800w" sizes="(max-width: 700px) 92vw, 400px" width="800" height="1422" loading="lazy" decoding="async"
                    alt="Stilt-plus-four-floor building under construction in Thoraipakkam on OMR, Chennai" />
               <div class="listing-badges"><span class="badge">Building</span><span class="badge badge-light">Under construction</span></div>
             </div>
@@ -248,7 +373,7 @@
             </div>
           </article>
 
-          <article class="listing-card">
+          <article class="listing-card" id="omr-thoraipakkam-9000-sqft">
             <div class="listing-media listing-media-blank" aria-hidden="true">
               <strong>9,000</strong>
               <span>sq ft · OMR Thoraipakkam</span>
@@ -269,7 +394,7 @@
             </div>
           </article>
 
-          <article class="listing-card">
+          <article class="listing-card" id="anandham-nagar-building">
             <div class="listing-media listing-media-blank" aria-hidden="true">
               <strong>2,500</strong>
               <span>sq ft building · on 1,200 sq ft land</span>
@@ -290,7 +415,7 @@
             </div>
           </article>
 
-          <article class="listing-card">
+          <article class="listing-card" id="sakthi-garden-plot-70">
             <div class="listing-media">
               <img class="contain" src="/images/sakthi-garden-plot-70.svg" width="560" height="440" loading="lazy" decoding="async"
                    alt="Sakthi Garden plot 70 layout: 60 by 50 ft corner plot on two 24 ft roads, split into plots A, B and C" />
@@ -312,9 +437,9 @@
             </div>
           </article>
 
-          <article class="listing-card featured wide">
+          <article class="listing-card featured wide" id="kaithandalam-100-acres">
             <div class="listing-media">
-              <img class="contain" src="/images/kaithandalam-fmb-sketch.webp" width="900" height="1273" loading="lazy" decoding="async"
+              <img class="contain" src="/images/kaithandalam-fmb-sketch.webp" srcset="/images/kaithandalam-fmb-sketch-480.webp 480w, /images/kaithandalam-fmb-sketch.webp 900w" sizes="(max-width: 700px) 92vw, 400px" width="900" height="1273" loading="lazy" decoding="async"
                    alt="Combined FMB sketch of the land in Kaithandalam and Kattuputhur villages, Uthiramerur taluk, Kancheepuram district" />
               <div class="listing-badges"><span class="badge">Industrial / Large land</span><span class="badge badge-light">100+ acres</span></div>
             </div>
@@ -357,7 +482,6 @@
           <!-- Pre-rendered so search engines and AdSense reviewers see content immediately.
                The TypeScript renderer replaces this markup on page load with the same content. -->
           <div class="service-card" data-id="land-buy-sell">
-            <div class="card-shine"></div>
             <div class="service-icon-wrap" aria-hidden="true">🏞️</div>
             <span class="service-tag">Real Estate</span>
             <h3 class="service-title">Land Buying &amp; Selling</h3>
@@ -371,7 +495,6 @@
             <a href="#contact" class="service-cta">Enquire Now <span>→</span></a>
           </div>
           <div class="service-card" data-id="plots">
-            <div class="card-shine"></div>
             <div class="service-icon-wrap" aria-hidden="true">📐</div>
             <span class="service-tag">Property</span>
             <h3 class="service-title">Plots Selling</h3>
@@ -385,7 +508,6 @@
             <a href="#contact" class="service-cta">Enquire Now <span>→</span></a>
           </div>
           <div class="service-card" data-id="farm-land">
-            <div class="card-shine"></div>
             <div class="service-icon-wrap" aria-hidden="true">🌾</div>
             <span class="service-tag">Agriculture</span>
             <h3 class="service-title">Farm Land Selling</h3>
@@ -399,7 +521,6 @@
             <a href="#contact" class="service-cta">Enquire Now <span>→</span></a>
           </div>
           <div class="service-card" data-id="painting">
-            <div class="card-shine"></div>
             <div class="service-icon-wrap" aria-hidden="true">🎨</div>
             <span class="service-tag">Maintenance</span>
             <h3 class="service-title">Building Painting</h3>
@@ -413,7 +534,6 @@
             <a href="#contact" class="service-cta">Enquire Now <span>→</span></a>
           </div>
           <div class="service-card" data-id="tree-cutting">
-            <div class="card-shine"></div>
             <div class="service-icon-wrap" aria-hidden="true">🌳</div>
             <span class="service-tag">Clearance</span>
             <h3 class="service-title">Tree Cutting &amp; Farm Land Tree Cutting</h3>
@@ -427,7 +547,6 @@
             <a href="#contact" class="service-cta">Enquire Now <span>→</span></a>
           </div>
           <div class="service-card" data-id="land-cleaning">
-            <div class="card-shine"></div>
             <div class="service-icon-wrap" aria-hidden="true">🏗️</div>
             <span class="service-tag">Land Services</span>
             <h3 class="service-title">Vacant Land Cleaning &amp; Sand</h3>

@@ -16,7 +16,7 @@
   --white:      #ffffff;
   --paper:      #faf8ef;
   --gray-200:   #e6e3d6;
-  --gray-400:   #9a988c;
+  --gray-400:   #6b695f;
   --gray-600:   #55564f;
   --text:       #22231f;
   --radius:     12px;
@@ -277,12 +277,6 @@ img { max-width: 100%; display: block; }
   grid-template-columns: 1.15fr 0.85fr;
   gap: 56px;
   align-items: center;
-  animation: fadeUp 0.8s ease both;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
 }
 
 .hero-brand {
@@ -400,6 +394,7 @@ img { max-width: 100%; display: block; }
 }
 .address-band a { text-decoration: underline; text-underline-offset: 3px; }
 .address-band-phones { display: flex; gap: 18px; flex-wrap: wrap; }
+.address-band-phones a { display: inline-block; padding: 6px 0; }
 
 /* ===========================
    PROPERTIES
@@ -917,6 +912,7 @@ img { max-width: 100%; display: block; }
 
 .contact-card a {
   display: block;
+  padding: 4px 0;
   color: var(--ink);
   font-weight: 700;
   transition: color var(--transition);
@@ -1067,7 +1063,7 @@ img { max-width: 100%; display: block; }
 .footer-bottom {
   text-align: center;
   padding: 20px 0;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.62);
   font-size: 0.82rem;
 }
 
@@ -1115,68 +1111,6 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 0 8px rgba(243, 223, 60, 0.7);
   z-index: 9999;
   transition: width 0.1s linear;
-}
-
-/* ===========================
-   CUSTOM CURSOR
-   =========================== */
-#cursor-dot,
-#cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 10000;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  will-change: transform;
-}
-
-#cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--wall);
-  box-shadow: 0 0 0 1px var(--ink);
-}
-
-#cursor-ring {
-  width: 32px;
-  height: 32px;
-  border: 2px solid rgba(201, 164, 0, 0.7);
-  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
-}
-
-#cursor-ring.expanded {
-  width: 52px;
-  height: 52px;
-  border-color: var(--wall);
-}
-
-@media (hover: none) {
-  #cursor-dot,
-  #cursor-ring { display: none; }
-}
-
-/* ===========================
-   CARD SHINE OVERLAY
-   =========================== */
-.card-shine {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at var(--shine-x, 50%) var(--shine-y, 50%),
-    rgba(243, 223, 60, 0.14) 0%,
-    transparent 60%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 0;
-}
-
-.service-card:hover .card-shine {
-  opacity: 1;
 }
 
 /* ===========================

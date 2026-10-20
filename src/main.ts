@@ -230,7 +230,7 @@ function initContactForm(): void {
 
     // Opened synchronously and NOT inside a setTimeout. Browsers only honour
     // window.open while the user gesture that triggered it is still active, and
-    // a timer breaks that chain — which is why mobile Safari and Chrome used to
+    // a timer breaks that chain, which is why mobile Safari and Chrome used to
     // block this silently while the form still claimed success.
     const opened = window.open(whatsappURL, '_blank', 'noopener,noreferrer');
 
@@ -248,7 +248,7 @@ function initContactForm(): void {
     // Popup blocked, or no handler for the link. Say so honestly and hand over a
     // link the customer can tap themselves, rather than claiming it worked.
     successEl.innerHTML =
-      "✓ Enquiry received — we have your details and will call you back. " +
+      "✓ Enquiry received. We have your details and will call you back. " +
       '<a href="' + whatsappURL + '" target="_blank" rel="noopener noreferrer">' +
       'Tap here to also send it on WhatsApp</a>.';
     successEl.classList.add('visible');

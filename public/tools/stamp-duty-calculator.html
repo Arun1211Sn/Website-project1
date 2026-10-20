@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Free calculator for stamp duty and registration fees on a property sale in Tamil Nadu. Uses the higher of sale price and guideline value, with the women buyers&#x27; concession and TDS." />
+  <title>Tamil Nadu Stamp Duty &amp; Registration Charges Calculator | Thirupathi S.T.S</title>
+  <link rel="canonical" href="https://www.thirupathirealestates.com/tools/stamp-duty-calculator.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Thirupathi S.T.S Groups Realty" />
+  <meta property="og:title" content="Tamil Nadu Stamp Duty &amp; Registration Charges Calculator | Thirupathi S.T.S" />
+  <meta property="og:description" content="Free calculator for stamp duty and registration fees on a property sale in Tamil Nadu. Uses the higher of sale price and guideline value, with the women buyers&#x27; concession and TDS." />
+  <meta property="og:url" content="https://www.thirupathirealestates.com/tools/stamp-duty-calculator.html" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:image" content="https://www.thirupathirealestates.com/images/og-thirupathi-sts.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#1c1d1b" />
+  <link rel="stylesheet" href="/pages.css" />
+  <meta name="google-adsense-account" content="ca-pub-4589248435119779" />
+  <!-- AdSense waits for the first interaction (or 5 s after load) so it does not slow the first paint. -->
+  <script>
+    (function () {
+      var done = false, events = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
+      function load() {
+        if (done) return;
+        done = true;
+        events.forEach(function (e) { removeEventListener(e, load); });
+        var s = document.createElement('script');
+        s.async = true;
+        s.crossOrigin = 'anonymous';
+        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4589248435119779';
+        document.head.appendChild(s);
+      }
+      events.forEach(function (e) { addEventListener(e, load, { once: true, passive: true }); });
+      addEventListener('load', function () { setTimeout(load, 5000); });
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.thirupathirealestates.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://www.thirupathirealestates.com/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Stamp duty calculator",
+            "item": "https://www.thirupathirealestates.com/tools/stamp-duty-calculator.html"
+          }
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Tamil Nadu stamp duty and registration charges calculator",
+        "url": "https://www.thirupathirealestates.com/tools/stamp-duty-calculator.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "provider": {
+          "@id": "https://www.thirupathirealestates.com/#business"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img class="logo-icon" src="/logo-mark.svg" alt="" width="40" height="40" />
+        <div>
+          <span>Thirupathi</span>
+          <span class="logo-sub">S.T.S Groups Realty</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/properties/">Properties</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/guides/">Guides</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Stamp duty calculator</p>
+      <h1>Stamp Duty &amp; Registration Calculator</h1>
+      <p>Work out the stamp duty and registration fee on a property purchase in Tamil Nadu, using the higher of the sale price and the guideline value.</p>
+    </div>
+  </section>
+
+  <article class="page-content">
+    <div class="container">
+      <form class="tool" id="stampForm" onsubmit="return false">
+        <div class="tool-grid">
+          <label>Sale price written in the deed (₹)
+            <input type="text" inputmode="numeric" id="price" placeholder="e.g. 85,00,000" autocomplete="off" />
+          </label>
+          <label>Guideline value of the property (₹)
+            <input type="text" inputmode="numeric" id="guideline" placeholder="Leave blank if not known" autocomplete="off" />
+            <small>Plot area × guideline rate per sq ft. Look it up on TNREGINET.</small>
+          </label>
+          <label>Stamp duty (%)
+            <input type="number" id="stampRate" value="7" step="0.1" min="0" />
+          </label>
+          <label>Registration fee (%)
+            <input type="number" id="regRate" value="4" step="0.1" min="0" />
+          </label>
+        </div>
+        <label class="check"><input type="checkbox" id="women" /> All buyers are women and the value is ₹10 lakh or less (registration fee 1% lower)</label>
+      </form>
+
+      <div class="tool-result" id="stampResult" aria-live="polite">
+        <p class="tool-empty">Enter the sale price to see the charges.</p>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <p>The sub-registrar charges stamp duty and registration fee on whichever is <strong>higher</strong>: the price written in the sale deed, or the government guideline value for that street or survey number. If you paid less than the guideline value, you still pay duty on the guideline value.</p>
+      <ul>
+        <li><strong>Stamp duty:</strong> 7% for a sale deed in Tamil Nadu.</li>
+        <li><strong>Registration fee:</strong> 4% for a sale deed. Women buying a house, flat, plot or farm land worth up to ₹10 lakh get a 1% concession.</li>
+        <li><strong>TDS:</strong> if the price is ₹50 lakh or more, the buyer deducts 1% from the payment to the seller and deposits it with Form 26QB. This is not an extra cost, but you must arrange it before registration.</li>
+      </ul>
+      <p>Rates are set by the state and do change. The rate boxes above are editable, so you can match them to the figure your sub-registrar quotes. Gift, settlement, partition and release deeds between family members have their own lower rates and are not covered by this calculator.</p>
+
+      <h2>A worked example</h2>
+      <p>A 2,400 sq ft plot is bought for ₹85 lakh. The guideline rate is ₹4,000 per sq ft, so the guideline value is ₹96 lakh. Duty is charged on ₹96 lakh: stamp duty ₹6,72,000 plus registration fee ₹3,84,000, a total of ₹10,56,000. Because the price is above ₹50 lakh, the buyer also deducts ₹85,000 TDS from the payment to the seller.</p>
+
+      <h2>Other costs on registration day</h2>
+      <ul>
+        <li>Document writer or advocate fee for drafting the deed</li>
+        <li>Encumbrance Certificate and certified copy fees</li>
+        <li>Scanning, computer and photo charges at the registration office</li>
+      </ul>
+      <p>Budget roughly another 1% for these. For the full background, read our guide to <a href="/guides/stamp-duty-tamil-nadu.html">stamp duty and registration in Tamil Nadu</a>.</p>
+
+      <div class="callout">Buying one of <a href="/properties/">our listed properties</a>? We check the guideline value and prepare a cost sheet for you. Call <a href="tel:+919884836380" data-track="stamp calculator call">98848 36380</a>.</div>
+    </div>
+  </article>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Thirupathi S.T.S Groups Realty</h4>
+          <p>Your trusted partner for land & property services in Chennai.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/properties/">Properties</a></li>
+            <li><a href="/tools/">Tools</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="/guides/patta-chitta-guide.html">Patta & Chitta Guide</a></li>
+            <li><a href="/guides/dtcp-vs-cmda.html">DTCP vs CMDA</a></li>
+            <li><a href="/guides/stamp-duty-tamil-nadu.html">Stamp Duty in TN</a></li>
+            <li><a href="/guides/land-buying-checklist.html">Land Buying Checklist</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Service</a></li>
+            <li><a href="/disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Thirupathi S.T.S Groups Realty. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/track.js" defer></script>
+  <script>
+    (function () {
+      var $ = function (id) { return document.getElementById(id); };
+      var num = function (id) { return Number(($(id).value || '').replace(/[^0-9.]/g, '')) || 0; };
+      var inr = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+      function words(n) {
+        if (n >= 1e7) return (n / 1e7).toFixed(2).replace(/\.?0+$/, '') + ' crore';
+        if (n >= 1e5) return (n / 1e5).toFixed(2).replace(/\.?0+$/, '') + ' lakh';
+        return '';
+      }
+      function render() {
+        var price = num('price'), guide = num('guideline');
+        var out = $('stampResult');
+        if (!price && !guide) { out.innerHTML = '<p class="tool-empty">Enter the sale price to see the charges.</p>'; return; }
+        var base = Math.max(price, guide);
+        var stampRate = Number($('stampRate').value) || 0;
+        var regRate = Number($('regRate').value) || 0;
+        var womenOk = $('women').checked && base <= 1e6;
+        if (womenOk) regRate = Math.max(regRate - 1, 0);
+        var stamp = base * stampRate / 100, reg = base * regRate / 100, total = stamp + reg;
+        var tds = price >= 5e6 ? price * 0.01 : 0;
+        var rows = [
+          ['Duty charged on', inr(base) + (words(base) ? ' (' + words(base) + ')' : '') + (guide > price ? ' (guideline value is higher)' : '')],
+          ['Stamp duty (' + stampRate + '%)', inr(stamp)],
+          ['Registration fee (' + regRate + '%)', inr(reg)],
+          ['Total paid to the government', '<strong>' + inr(total) + '</strong>'],
+          ['Total cost with the price', inr(price + total)]
+        ];
+        if (tds) rows.push(['TDS to deduct from the seller (1%)', inr(tds)]);
+        var note = $('women').checked && !womenOk ? '<p class="note">The women buyers\' concession applies only up to ₹10 lakh, so it is not included.</p>' : '';
+        out.innerHTML = '<table class="facts">' + rows.map(function (r) {
+          return '<tr><th scope="row">' + r[0] + '</th><td>' + r[1] + '</td></tr>';
+        }).join('') + '</table>' + note;
+      }
+      function formatInput(e) {
+        var el = e.target, n = Number(el.value.replace(/[^0-9]/g, ''));
+        el.value = n ? n.toLocaleString('en-IN') : '';
+      }
+      ['price', 'guideline'].forEach(function (id) { $(id).addEventListener('input', formatInput); });
+      $('stampForm').addEventListener('input', render);
+      $('stampForm').addEventListener('change', render);
+    })();
+  </script>
+</body>
+</html>

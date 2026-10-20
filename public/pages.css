@@ -225,3 +225,45 @@ article.page-content strong { color: var(--navy); }
   .page-header nav ul { gap: 0.75rem; font-size: 0.9rem; }
   .logo-sub { display: none; }
 }
+
+/* Property and tool pages */
+@media (max-width: 640px) {
+  .page-header .container { flex-wrap: wrap; gap: 0.6rem; }
+  .page-header nav ul { flex-wrap: wrap; gap: 0.4rem 0.9rem; }
+}
+.listing-figure { margin: 0 0 1.5rem; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--gray-200); background: var(--gray-100); }
+.listing-figure img { width: 100%; height: auto; max-height: 560px; object-fit: cover; }
+.listing-figure.contain img { object-fit: contain; padding: 1rem; background: var(--white); }
+.listing-figure figcaption { font-size: 0.85rem; color: var(--gray-600); padding: 0.6rem 1rem; }
+table.facts { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+table.facts th, table.facts td { text-align: left; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--gray-200); vertical-align: top; }
+table.facts th { width: 38%; font-weight: 600; color: var(--gray-600); }
+table.facts td { color: var(--navy); font-weight: 600; }
+.cta-box { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; background: var(--navy); color: var(--white); border-radius: var(--radius); padding: 1.3rem 1.5rem; margin: 2rem 0; border-left: 6px solid var(--gold); }
+.cta-box strong { color: var(--gold) !important; font-size: 1.1rem; }
+.cta-box p { margin: 0.2rem 0 0 !important; color: var(--gray-200); font-size: 0.92rem; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.btn-wa, .btn-call { display: inline-block; padding: 0.7rem 1.1rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.92rem; }
+.btn-wa { background: #25d366; color: #0b2a17; }
+.btn-call { background: var(--gold); color: var(--navy); }
+.btn-wa:hover, .btn-call:hover { filter: brightness(0.95); color: var(--navy); }
+ul.checklist { list-style: none; padding-left: 0; }
+ul.checklist li { padding-left: 1.8rem; position: relative; }
+ul.checklist li::before { content: '✓'; position: absolute; left: 0.2rem; color: #2f7d32; font-weight: 800; }
+.related { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin-top: 1rem; }
+.related-card, .property-row { display: block; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 1rem 1.1rem; text-decoration: none; color: var(--navy); background: var(--white); transition: border-color 0.2s; }
+.related-card:hover, .property-row:hover { border-color: var(--gold); color: var(--navy); }
+.related-card span, .property-type { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--blue-light); font-weight: 700; }
+.related-card strong, .property-row strong { display: block; margin: 0.2rem 0; }
+.property-list { display: grid; gap: 0.8rem; margin: 1.5rem 0; }
+.property-row > span:last-child { font-size: 0.9rem; color: var(--gray-600); }
+form.tool { background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 1.3rem; margin: 1rem 0; }
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+form.tool label { display: flex; flex-direction: column; gap: 0.35rem; font-weight: 600; font-size: 0.92rem; color: var(--navy); }
+form.tool label.check { flex-direction: row; align-items: center; gap: 0.5rem; margin-top: 1rem; font-weight: 500; }
+form.tool input[type=text], form.tool input[type=number], form.tool select { padding: 0.65rem 0.75rem; border: 1px solid #c9ccd3; border-radius: 8px; font: inherit; font-size: 1rem; background: var(--white); }
+form.tool input:focus, form.tool select:focus { outline: 2px solid var(--gold); border-color: var(--navy); }
+form.tool small { font-weight: 400; color: var(--gray-600); font-size: 0.8rem; }
+.tool-result { border: 2px solid var(--gold); border-radius: var(--radius); padding: 0.5rem 1rem; margin: 1rem 0 2rem; background: var(--white); }
+.tool-result table.facts { margin: 0.4rem 0; }
+.tool-empty { color: var(--gray-600); margin: 0.6rem 0 !important; }

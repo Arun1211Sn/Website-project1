@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Convert land area between grounds, cents, acres, square feet, square metres, hectares and ares, the units used for property in Chennai and Tamil Nadu. Includes a plot size calculator." />
+  <title>Land Area Converter: Ground, Cent, Acre, Sq ft | Thirupathi S.T.S</title>
+  <link rel="canonical" href="https://www.thirupathirealestates.com/tools/land-area-converter.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Thirupathi S.T.S Groups Realty" />
+  <meta property="og:title" content="Land Area Converter: Ground, Cent, Acre, Sq ft | Thirupathi S.T.S" />
+  <meta property="og:description" content="Convert land area between grounds, cents, acres, square feet, square metres, hectares and ares, the units used for property in Chennai and Tamil Nadu. Includes a plot size calculator." />
+  <meta property="og:url" content="https://www.thirupathirealestates.com/tools/land-area-converter.html" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:image" content="https://www.thirupathirealestates.com/images/og-thirupathi-sts.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#1c1d1b" />
+  <link rel="stylesheet" href="/pages.css" />
+  <meta name="google-adsense-account" content="ca-pub-4589248435119779" />
+  <!-- AdSense waits for the first interaction (or 5 s after load) so it does not slow the first paint. -->
+  <script>
+    (function () {
+      var done = false, events = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
+      function load() {
+        if (done) return;
+        done = true;
+        events.forEach(function (e) { removeEventListener(e, load); });
+        var s = document.createElement('script');
+        s.async = true;
+        s.crossOrigin = 'anonymous';
+        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4589248435119779';
+        document.head.appendChild(s);
+      }
+      events.forEach(function (e) { addEventListener(e, load, { once: true, passive: true }); });
+      addEventListener('load', function () { setTimeout(load, 5000); });
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.thirupathirealestates.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://www.thirupathirealestates.com/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Land area converter",
+            "item": "https://www.thirupathirealestates.com/tools/land-area-converter.html"
+          }
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Land area converter for Tamil Nadu units",
+        "url": "https://www.thirupathirealestates.com/tools/land-area-converter.html",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "provider": {
+          "@id": "https://www.thirupathirealestates.com/#business"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img class="logo-icon" src="/logo-mark.svg" alt="" width="40" height="40" />
+        <div>
+          <span>Thirupathi</span>
+          <span class="logo-sub">S.T.S Groups Realty</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/properties/">Properties</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/guides/">Guides</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Land area converter</p>
+      <h1>Land Area Converter</h1>
+      <p>Convert between grounds, cents, acres, square feet and the metric units on patta records, or work out a plot's area from its sides.</p>
+    </div>
+  </section>
+
+  <article class="page-content">
+    <div class="container">
+      <form class="tool" id="convForm" onsubmit="return false">
+        <div class="tool-grid">
+          <label>Area
+            <input type="number" id="amount" value="1" min="0" step="any" />
+          </label>
+          <label>Unit
+            <select id="unit">
+              <option value="sqft">Square feet</option>
+              <option value="sqm">Square metres</option>
+              <option value="sqyd">Square yards</option>
+              <option value="ground" selected>Grounds</option>
+              <option value="cent">Cents</option>
+              <option value="acre">Acres</option>
+              <option value="are">Ares</option>
+              <option value="hectare">Hectares</option>
+            </select>
+          </label>
+        </div>
+      </form>
+      <div class="tool-result" id="convResult" aria-live="polite"></div>
+
+      <h3>Plot size from length and breadth</h3>
+      <form class="tool" id="dimForm" onsubmit="return false">
+        <div class="tool-grid">
+          <label>Length (ft)<input type="number" id="len" min="0" step="any" placeholder="e.g. 60" /></label>
+          <label>Breadth (ft)<input type="number" id="wid" min="0" step="any" placeholder="e.g. 40" /></label>
+        </div>
+      </form>
+      <div class="tool-result" id="dimResult" aria-live="polite"><p class="tool-empty">Enter both sides of a rectangular plot.</p></div>
+
+      <h2>Land units used in Tamil Nadu</h2>
+      <p>Chennai and the surrounding districts mix several units. City plots are sold in square feet or <strong>grounds</strong>; suburban and village land in <strong>cents</strong> and <strong>acres</strong>; and government records such as patta and the FMB sketch use <strong>hectares</strong> and <strong>ares</strong>.</p>
+      <table class="facts">
+        <tr><th scope="row">1 square metre</th><td>10.76 sq ft</td></tr>
+        <tr><th scope="row">1 square yard</th><td>9 sq ft</td></tr>
+        <tr><th scope="row">1 ground</th><td>2,400 sq ft</td></tr>
+        <tr><th scope="row">1 cent</th><td>435.60 sq ft</td></tr>
+        <tr><th scope="row">1 acre</th><td>43,560 sq ft</td></tr>
+        <tr><th scope="row">1 are</th><td>1,076.39 sq ft</td></tr>
+        <tr><th scope="row">1 hectare</th><td>107,639.10 sq ft</td></tr>
+      </table>
+      <ul>
+        <li><strong>Ground:</strong> 2,400 sq ft, the usual unit for plots inside Chennai. A 60 × 40 ft plot is exactly one ground.</li>
+        <li><strong>Cent:</strong> one hundredth of an acre, 435.6 sq ft. Common for plots outside the city and for farm land.</li>
+        <li><strong>Acre:</strong> 100 cents, or about 18 grounds.</li>
+        <li><strong>Hectare and are:</strong> the metric units on patta and chitta extracts. One hectare is 100 ares, or about 2.47 acres.</li>
+      </ul>
+      <p>Some older documents use local units such as the kuzhi or kani, whose size differs from district to district. Convert those only with the figure written in the document itself, or ask us to check.</p>
+
+      <div class="callout">Comparing prices? A rate per cent and a rate per sq ft can look very different for the same land. Convert both to one unit before you compare. See <a href="/properties/">our current listings</a> or read the <a href="/guides/land-buying-checklist.html">land buying checklist</a>.</div>
+    </div>
+  </article>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Thirupathi S.T.S Groups Realty</h4>
+          <p>Your trusted partner for land & property services in Chennai.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/properties/">Properties</a></li>
+            <li><a href="/tools/">Tools</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="/guides/patta-chitta-guide.html">Patta & Chitta Guide</a></li>
+            <li><a href="/guides/dtcp-vs-cmda.html">DTCP vs CMDA</a></li>
+            <li><a href="/guides/stamp-duty-tamil-nadu.html">Stamp Duty in TN</a></li>
+            <li><a href="/guides/land-buying-checklist.html">Land Buying Checklist</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Service</a></li>
+            <li><a href="/disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Thirupathi S.T.S Groups Realty. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/track.js" defer></script>
+  <script>
+    (function () {
+      var F = {sqft: 1, sqm: 10.7639104, sqyd: 9, ground: 2400, cent: 435.6, acre: 43560, are: 1076.39104, hectare: 107639.104};
+      var N = {sqft: 'Square feet', sqm: 'Square metres', sqyd: 'Square yards', ground: 'Grounds', cent: 'Cents', acre: 'Acres', are: 'Ares', hectare: 'Hectares'};
+      var $ = function (id) { return document.getElementById(id); };
+      function fmt(v) {
+        if (!isFinite(v)) return '';
+        var d = v >= 1000 ? 0 : v >= 10 ? 2 : v >= 0.01 ? 3 : 5;
+        return Number(v.toFixed(d)).toLocaleString('en-IN', { maximumFractionDigits: d });
+      }
+      function table(sqft, skip) {
+        return '<table class="facts">' + Object.keys(F).filter(function (k) { return k !== skip; }).map(function (k) {
+          return '<tr><th scope="row">' + N[k] + '</th><td>' + fmt(sqft / F[k]) + '</td></tr>';
+        }).join('') + '</table>';
+      }
+      function conv() {
+        var a = Number($('amount').value) || 0, u = $('unit').value;
+        $('convResult').innerHTML = a ? table(a * F[u], u) : '<p class="tool-empty">Enter an area.</p>';
+      }
+      function dim() {
+        var l = Number($('len').value) || 0, w = Number($('wid').value) || 0;
+        $('dimResult').innerHTML = l && w ? table(l * w) : '<p class="tool-empty">Enter both sides of a rectangular plot.</p>';
+      }
+      $('convForm').addEventListener('input', conv);
+      $('dimForm').addEventListener('input', dim);
+      conv();
+    })();
+  </script>
+</body>
+</html>

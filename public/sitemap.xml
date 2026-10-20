@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.thirupathirealestates.com/</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image><image:loc>https://www.thirupathirealestates.com/images/office-thoraipakkam.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.thirupathirealestates.com/images/building-omr-thoraipakkam.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.thirupathirealestates.com/images/kaithandalam-fmb-sketch.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.thirupathirealestates.com/images/og-thirupathi-sts.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/about.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/contact.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -32,31 +40,37 @@
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/guides/patta-chitta-guide.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/guides/dtcp-vs-cmda.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/guides/stamp-duty-tamil-nadu.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/guides/land-buying-checklist.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/guides/farm-land-vs-residential.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/guides/vacant-land-maintenance.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

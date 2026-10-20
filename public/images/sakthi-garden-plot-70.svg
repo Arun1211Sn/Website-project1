@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" font-family="Manrope, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Sakthi Garden – Plot 70 layout</title>
+  <desc id="d">A 60 by 50 ft corner plot on two 24 ft roads, split into plot A of 1,500 sq ft and plots B and C of 750 sq ft each.</desc>
+  <rect width="560" height="440" fill="#faf8ef"/>
+  <rect x="0" y="0" width="70" height="440" fill="#d9d6c8"/>
+  <text x="35" y="190" font-size="13" font-weight="800" fill="#1c1d1b" text-anchor="middle" transform="rotate(-90 35 190)" letter-spacing="2">24 FT ROAD</text>
+  <rect x="0" y="372" width="560" height="68" fill="#d9d6c8"/>
+  <text x="310" y="412" font-size="13" font-weight="800" fill="#1c1d1b" text-anchor="middle" letter-spacing="2">24 FT ROAD</text>
+  <g stroke="#1c1d1b" stroke-width="3">
+    <rect x="100" y="52" width="210" height="150" fill="#f3df3c" fill-opacity=".25"/>
+    <rect x="100" y="202" width="210" height="150" fill="#f3df3c" fill-opacity=".25"/>
+    <rect x="310" y="52" width="210" height="300" fill="#f3df3c" fill-opacity=".5"/>
+  </g>
+  <g text-anchor="middle" fill="#1c1d1b" font-weight="800">
+    <text x="205" y="125" font-size="26">C</text><text x="205" y="150" font-size="14" font-weight="600">750 sq ft · 30×25</text>
+    <text x="205" y="275" font-size="26">B</text><text x="205" y="300" font-size="14" font-weight="600">750 sq ft · 30×25</text>
+    <text x="415" y="200" font-size="30">A</text><text x="415" y="226" font-size="14" font-weight="600">1,500 sq ft · 30×50</text>
+    <text x="310" y="46" font-size="14">60 ft</text>
+    <text x="544" y="205" font-size="14" transform="rotate(90 544 205)">50 ft</text>
+  </g>
+  <text x="100" y="18" font-size="12" fill="#55564f">Sakthi Garden · Plot No. 70 · corner plot · redrawn, not to scale</text>
+</svg>

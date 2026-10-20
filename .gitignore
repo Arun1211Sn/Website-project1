@@ -4,3 +4,7 @@ dist/
 .env.local
 *.log
 .vercel
+
+# Raw client material (WhatsApp exports, owner documents) — not for the public repo
+latest project pic/
+.env*

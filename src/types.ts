@@ -5,11 +5,6 @@ export interface Service {
   title: string;
   description: string;
   features: string[];
-  color: string;
-  bgColor: string;
-  tagColor: string;
-  tagBg: string;
-  ctaColor: string;
 }
 
 export interface FormData {

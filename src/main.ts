@@ -1,6 +1,5 @@
 import { services } from './services-data';
 import type { FormData, ValidationResult } from './types';
-import { initHeroScene } from './hero-scene';
 
 // ===========================
 // NAVBAR
@@ -44,7 +43,7 @@ function initNavbar(): void {
 }
 
 function updateActiveNavLink(): void {
-  const sections = ['home', 'services', 'about', 'contact'];
+  const sections = ['home', 'properties', 'services', 'about', 'contact'];
   const navLinks = document.querySelectorAll('.nav-link');
 
   let current = '';
@@ -72,12 +71,8 @@ function renderServices(): void {
       (service) => `
     <div class="service-card" data-id="${service.id}">
       <div class="card-shine"></div>
-      <div class="service-icon-wrap" style="background:${service.bgColor}">
-        ${service.icon}
-      </div>
-      <span class="service-tag" style="color:${service.tagColor};background:${service.tagBg}">
-        ${service.tag}
-      </span>
+      <div class="service-icon-wrap" aria-hidden="true">${service.icon}</div>
+      <span class="service-tag">${service.tag}</span>
       <h3 class="service-title">${service.title}</h3>
       <p class="service-desc">${service.description}</p>
       <div class="service-features">
@@ -85,13 +80,13 @@ function renderServices(): void {
           .map(
             (f) => `
           <div class="service-feature">
-            <span class="service-feature-dot" style="background:${service.color}"></span>
+            <span class="service-feature-dot"></span>
             <span>${f}</span>
           </div>`
           )
           .join('')}
       </div>
-      <a href="#contact" class="service-cta" style="color:${service.ctaColor}">
+      <a href="#contact" class="service-cta">
         Enquire Now <span>→</span>
       </a>
     </div>`
@@ -223,6 +218,7 @@ function initContactForm(): void {
       'painting':      'Building Painting',
       'tree-cutting':  'Tree Cutting & Farm Land Tree Cutting',
       'land-cleaning': 'Vacant Land Cleaning & Sand',
+      'listing':       'Enquiry about a listed property',
     };
 
     const serviceName = formData.service
@@ -239,6 +235,8 @@ function initContactForm(): void {
     if (formData.message.trim()) {
       msgLines.push(`Message: ${formData.message.trim()}`);
     }
+
+    trackContact('form', `form: ${serviceName}`);
 
     const whatsappURL =
       `https://wa.me/919884836380?text=${encodeURIComponent(msgLines.join('\n'))}`;
@@ -290,6 +288,56 @@ function initContactForm(): void {
       '<a href="' + whatsappURL + '" target="_blank" rel="noopener noreferrer">' +
       'Tap here to also send it on WhatsApp</a>.';
     successEl.classList.add('visible');
+  });
+}
+
+// ===========================
+// CONTACT TRACKING
+// ===========================
+type ContactType = 'whatsapp' | 'call' | 'form';
+
+// Fire-and-forget beacon to /api/track. sendBeacon survives the page being
+// left for WhatsApp or the dialer, which a plain fetch may not.
+function trackContact(type: ContactType, source: string): void {
+  const payload = JSON.stringify({
+    type,
+    source,
+    page: location.pathname + location.hash,
+    referrer: document.referrer,
+  });
+  try {
+    const blob = new Blob([payload], { type: 'application/json' });
+    if (navigator.sendBeacon?.('/api/track', blob)) return;
+  } catch {
+    /* fall back to fetch below */
+  }
+  void fetch('/api/track', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: payload,
+    keepalive: true,
+  }).catch(() => {});
+}
+
+// Name the button the visitor used: the listing it sits in, an explicit
+// data-track label, or the nearest section.
+function contactSource(link: Element): string {
+  const labelled = link.closest<HTMLElement>('[data-track]');
+  if (labelled) return labelled.dataset['track'] ?? '';
+  const listing = link.closest('.listing-card')?.querySelector('.listing-title');
+  if (listing?.textContent) return `listing: ${listing.textContent.trim()}`;
+  return link.closest('[id]')?.id ?? 'page';
+}
+
+function initContactTracking(): void {
+  // One delegated listener covers every tel: and wa.me link, including the
+  // popup-blocked fallback link the form writes in later.
+  document.addEventListener('click', (e) => {
+    const link = (e.target as Element | null)?.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href') ?? '';
+    if (href.startsWith('tel:')) trackContact('call', contactSource(link));
+    else if (href.includes('wa.me/')) trackContact('whatsapp', contactSource(link));
   });
 }
 
@@ -462,6 +510,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderServices();
   animateCounters();
   initContactForm();
+  initContactTracking();
   initScrollTop();
   setFooterYear();
   initSmoothScroll();
@@ -469,5 +518,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initCustomCursor();
   initCardTilt();
   initMagneticButtons();
-  initHeroScene();
 });

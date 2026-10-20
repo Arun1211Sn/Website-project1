@@ -1,5 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0a1628"/>
-  <text x="32" y="46" font-family="Arial Black, sans-serif" font-size="40" font-weight="900"
-        fill="#f0b429" text-anchor="middle">S</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Thirupathi S.T.S Groups Realty logo">
+  <circle cx="100" cy="100" r="99" fill="#1c1d1b"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#f3df3c" stroke-width="5"/>
+  <g fill="#f3df3c" stroke="#1c1d1b" stroke-width="5" stroke-linejoin="round" paint-order="stroke">
+    <path d="M72 32H128V60H80Q76 60 76 64V72Q76 79 83 80L132 87Q156 91 156 114V148Q156 168 136 168H44V140H120Q127 140 127 133V120Q127 112 119 111L68 104Q44 100 44 76V60Q44 32 72 32Z"/>
+    <path d="M66 36H150V60H118V140H94V60H66Z"/>
+  </g>
 </svg>

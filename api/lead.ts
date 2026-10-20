@@ -37,6 +37,7 @@ const SERVICE_LABELS: Record<string, string> = {
   painting: 'Building Painting',
   'tree-cutting': 'Tree Cutting & Farm Land Tree Cutting',
   'land-cleaning': 'Vacant Land Cleaning & Sand',
+  listing: 'Enquiry about a listed property',
 };
 
 export default async function handler(
@@ -129,6 +130,23 @@ export default async function handler(
     // The customer may already be in WhatsApp, so a delivery failure here is
     // logged loudly for recovery but never surfaced as a failed submission.
     console.error('[lead] Delivery failed:', error, lead);
+  }
+
+  // Also keep every enquiry in the owner's Google Sheet, alongside the contact
+  // counts, whichever delivery channel ran above.
+  const sheetUrl = process.env.SHEET_WEBHOOK_URL;
+  const sheetSecret = process.env.SHEET_WEBHOOK_SECRET;
+  if (sheetUrl && sheetSecret) {
+    try {
+      const response = await fetch(sheetUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ secret: sheetSecret, kind: 'lead', ...lead }),
+      });
+      if (!response.ok) throw new Error(`Sheet responded ${response.status}`);
+    } catch (error) {
+      console.error('[lead] Sheet append failed:', error, lead);
+    }
   }
 
   res.status(200).json({ ok: true });

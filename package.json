@@ -8,12 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "three": "^0.170.0"
-  },
   "devDependencies": {
     "@types/node": "^26.2.0",
-    "@types/three": "^0.170.0",
     "@vercel/node": "^7.0.0",
     "typescript": "^5.3.3",
     "vite": "^5.1.0"

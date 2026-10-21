@@ -550,14 +550,28 @@ img { max-width: 100%; display: block; }
 }
 .listing-map:hover { color: var(--yellow-ink); }
 .listing-more {
-  flex-basis: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 18px;
+  border-radius: var(--radius);
+  background: var(--yellow);
+  color: var(--ink);
   font-size: 0.88rem;
   font-weight: 800;
-  color: var(--yellow-ink);
-  padding: 4px 0;
+  border: 2px solid var(--ink);
 }
-.listing-more::after { content: ' →'; }
-.listing-more:hover { color: var(--ink); }
+.listing-more::after { content: '→'; transition: transform var(--transition); }
+.listing-more:hover::after,
+.listing-card:hover .listing-more::after { transform: translateX(4px); }
+
+/* The whole card opens the listing page: the title link is stretched over
+   the card, and the action links sit above it so they still work. */
+.listing-card { position: relative; cursor: pointer; }
+.listing-link { color: inherit; }
+.listing-link::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+.listing-card:hover .listing-title { color: var(--yellow-ink); }
+.listing-actions a { position: relative; z-index: 2; }
 
 .area-links { text-align: center; margin: -1.2rem 0 2rem; font-size: 0.95rem; color: var(--gray-600); }
 .area-links a { color: var(--ink); font-weight: 700; border-bottom: 2px solid var(--yellow); }

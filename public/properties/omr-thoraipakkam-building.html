@@ -87,6 +87,17 @@
   </script>
 </head>
 <body>
+  <!-- ticker: current messages; public/updates.js refreshes them from the Updates sheet -->
+  <div class="ticker" id="ticker" role="region" aria-label="Latest updates">
+    <span class="ticker-label">Updates</span>
+    <div class="ticker-track">
+      <ul class="ticker-list">
+        <li data-date="2026-10-21"><a href="/properties/thirukazhukundram-22-acres.html"><b class="ticker-new">NEW</b>22 acres of coconut and mango land on the Thirukazhukundram to Chengalpattu road</a></li>
+        <li data-date="2026-10-21"><a href="/properties/kaithandalam-100-acres.html">100 acres in one block off SH-118, Kaithandalam. Single direct owner</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- /ticker -->
   <header class="page-header">
     <div class="container">
       <a href="/" class="logo">
@@ -218,5 +229,6 @@
     </div>
   </footer>
   <script src="/track.js" defer></script>
+  <script src="/updates.js" defer></script>
 </body>
 </html>

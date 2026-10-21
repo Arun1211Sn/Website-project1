@@ -272,7 +272,7 @@ img { max-width: 100%; display: block; }
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 128px 24px 72px;
+  padding: 162px 24px 72px;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 56px;
@@ -476,6 +476,7 @@ img { max-width: 100%; display: block; }
   color: var(--yellow);
 }
 .badge-light { background: var(--yellow); color: var(--ink); }
+.badge-new { background: #b3261e; color: #fff; }
 
 .listing-body {
   padding: 24px 24px 22px;
@@ -558,6 +559,15 @@ img { max-width: 100%; display: block; }
 .listing-more::after { content: ' →'; }
 .listing-more:hover { color: var(--ink); }
 
+.alerts-cta {
+  display: inline-block;
+  background: #25d366;
+  color: #0b2a17;
+  font-weight: 800;
+  padding: 11px 18px;
+  border-radius: 10px;
+}
+.alerts-cta:hover { filter: brightness(0.95); }
 .listings-note {
   margin-top: 36px;
   text-align: center;
@@ -1125,6 +1135,123 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===========================
+   UPDATES TICKER & NEW-PROJECT ALERT (public/updates.js)
+   Same rules live in src/styles.css and public/pages.css.
+   =========================== */
+.ticker {
+  --ticker-h: 34px;
+  height: var(--ticker-h);
+  display: flex;
+  align-items: stretch;
+  background: #f5cf1e;
+  color: #1c1d1b;
+  font-size: 0.86rem;
+  font-weight: 600;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+.ticker-label {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  background: #1c1d1b;
+  color: #f3df3c;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.ticker-track { flex: 1; overflow: hidden; display: flex; align-items: center; }
+.ticker-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  width: max-content;
+}
+.ticker.is-running .ticker-list { animation: ticker-scroll linear infinite; }
+.ticker:hover .ticker-list,
+.ticker:focus-within .ticker-list { animation-play-state: paused; }
+.ticker-list li { margin: 0; padding: 0 28px 0 0; }
+.ticker-list li::after { content: '•'; margin-left: 28px; opacity: 0.5; }
+.ticker-list a, .ticker-list span { color: inherit; text-decoration: none; }
+.ticker-list a:hover { text-decoration: underline; }
+.ticker-new {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: #b3261e;
+  color: #fff;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker.is-running .ticker-list { animation: none; }
+  .ticker-track { overflow-x: auto; }
+}
+
+.project-alert {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 1200;
+  width: min(340px, calc(100vw - 104px));
+  background: #1c1d1b;
+  color: #fff;
+  border-radius: 14px;
+  border-left: 5px solid #f3df3c;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  padding: 16px 18px 14px;
+  animation: alert-in 0.35s ease both;
+}
+@keyframes alert-in { from { opacity: 0; transform: translateY(16px); } }
+.project-alert-label {
+  margin: 0 0 4px;
+  color: #f3df3c;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.project-alert-text { margin: 0 0 12px; font-weight: 600; line-height: 1.45; font-size: 0.95rem; }
+.project-alert-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.project-alert-actions a {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.project-alert-view { background: #f3df3c; color: #1c1d1b; }
+.project-alert-wa { background: #25d366; color: #0b2a17; }
+.project-alert-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* The home page's navbar is fixed, so the ticker is pinned above it. */
+.ticker { position: fixed; top: 0; left: 0; right: 0; z-index: 1001; }
+.navbar { top: 34px; }
+#scrollProgress { top: 34px; }
+html { scroll-padding-top: 34px; }
+
+/* ===========================
    RESPONSIVE
    =========================== */
 @media (max-width: 1024px) {
@@ -1157,7 +1284,7 @@ img { max-width: 100%; display: block; }
   .nav-link { width: 100%; padding: 12px 16px; font-size: 1rem; }
   .nav-call { margin: 12px 0 0; }
 
-  .hero-inner { padding-top: 104px; }
+  .hero-inner { padding-top: 138px; }
   .hero-logo { width: 72px; height: 72px; }
 
   .about-grid { grid-template-columns: 1fr; gap: 48px; }

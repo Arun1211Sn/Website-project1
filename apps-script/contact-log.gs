@@ -7,6 +7,8 @@
  *   Contacts — one row per tap, with the button or listing used
  *   Leads    — one row per enquiry form (name, phone, service, message)
  *   Summary  — live counts built from the two tabs above
+ *   Updates  — messages for the website's scrolling updates bar and
+ *              new-project alert, edited by hand (see setupUpdates)
  *
  * Setup (once):
  *   1. Paste this file into Extensions → Apps Script of a new Google Sheet.
@@ -14,6 +16,7 @@
  *   3. Run `setup` (the first function, so the editor selects it) once from the editor and allow the permissions it asks for.
  *   4. Deploy → New deployment → Web app; Execute as "Me", access "Anyone".
  *      The /exec URL it gives is SHEET_WEBHOOK_URL on Vercel.
+ *   5. Run `setupUpdates` once to add the Updates tab.
  */
 
 const SECRET = 'PASTE_SHEET_WEBHOOK_SECRET_HERE';
@@ -21,6 +24,7 @@ const SECRET = 'PASTE_SHEET_WEBHOOK_SECRET_HERE';
 const TABS = {
   Contacts: ['Time', 'Type', 'Button / listing', 'Page', 'City', 'Country', 'Device', 'Came from'],
   Leads: ['Time', 'Name', 'Phone', 'Service', 'Message'],
+  Updates: ['Date', 'Message', 'Link (optional)', 'Type (new / update)', 'Show (Yes / No)'],
 };
 
 /** Run once: creates the tabs, sets India time, and builds the Summary tab. */
@@ -57,6 +61,43 @@ function setup() {
 
   const blank = ss.getSheetByName('Sheet1');
   if (blank && blank.getLastRow() === 0) ss.deleteSheet(blank);
+}
+
+/**
+ * Run once: adds the Updates tab that feeds the scrolling updates bar and the
+ * new-project alert on the website. Each row is one message; set Show to No to
+ * hide it, and Type to "new" for a new project (it also pops up as an alert).
+ */
+function setupUpdates() {
+  const sh = sheet('Updates');
+  if (sh.getLastRow() === 1) {
+    sh.getRange(2, 1, 2, 5).setValues([
+      [new Date(), '22 acres of coconut and mango land on the Thirukazhukundram to Chengalpattu road', '/properties/thirukazhukundram-22-acres.html', 'new', 'Yes'],
+      [new Date(), '100 acres in one block off SH-118, Kaithandalam. Single direct owner', '/properties/kaithandalam-100-acres.html', 'update', 'Yes'],
+    ]);
+  }
+  sh.getRange('A:A').setNumberFormat('dd mmm yyyy');
+  sh.setColumnWidth(2, 520);
+  sh.setColumnWidth(3, 320);
+}
+
+// The website reads the Updates tab through GET (via /api/updates on Vercel).
+// Only that tab is exposed; leads and contacts stay private.
+function doGet() {
+  const sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Updates');
+  if (!sh || sh.getLastRow() < 2) return reply({ ok: true, updates: [] });
+  const rows = sh.getRange(2, 1, sh.getLastRow() - 1, 5).getValues();
+  const updates = rows
+    .filter((r) => r[1] && String(r[4]).trim().toLowerCase() !== 'no')
+    .map((r) => ({
+      date: r[0] instanceof Date ? Utilities.formatDate(r[0], 'Asia/Kolkata', 'yyyy-MM-dd') : String(r[0] || ''),
+      message: String(r[1]).slice(0, 200),
+      link: String(r[2] || '').slice(0, 300),
+      type: String(r[3]).trim().toLowerCase() === 'new' ? 'new' : 'update',
+    }))
+    .sort((a, b) => (a.date < b.date ? 1 : -1))
+    .slice(0, 10);
+  return reply({ ok: true, updates: updates });
 }
 
 function doPost(e) {
@@ -104,7 +145,7 @@ function sheet(tab) {
     sh.appendRow(TABS[tab]);
     sh.getRange(1, 1, 1, TABS[tab].length).setFontWeight('bold').setBackground('#f3df3c');
     sh.setFrozenRows(1);
-    sh.getRange('A:A').setNumberFormat('dd mmm yyyy, h:mm am/pm');
+    if (tab !== 'Updates') sh.getRange('A:A').setNumberFormat('dd mmm yyyy, h:mm am/pm');
   }
   return sh;
 }

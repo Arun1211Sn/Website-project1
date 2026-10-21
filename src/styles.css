@@ -559,6 +559,9 @@ img { max-width: 100%; display: block; }
 .listing-more::after { content: ' →'; }
 .listing-more:hover { color: var(--ink); }
 
+.area-links { text-align: center; margin: -1.2rem 0 2rem; font-size: 0.95rem; color: var(--gray-600); }
+.area-links a { color: var(--ink); font-weight: 700; border-bottom: 2px solid var(--yellow); }
+.tamil-line { text-align: center; color: var(--gray-600); font-size: 0.95rem; margin-top: 1.5rem; }
 .alerts-cta {
   display: inline-block;
   background: #25d366;

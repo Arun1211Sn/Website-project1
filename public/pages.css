@@ -393,3 +393,5 @@ form.tool small { font-weight: 400; color: var(--gray-600); font-size: 0.8rem; }
 .page-hero .hero-new { display: inline-block; background: #b3261e; color: #fff; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 10px; border-radius: 4px; margin-bottom: 0.6rem; }
 .property-row .badge-new { display: inline-block; margin-left: 8px; background: #b3261e; color: #fff; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; padding: 1px 6px; border-radius: 4px; vertical-align: middle; }
 .alerts-cta { display: inline-block; margin-top: 0.4rem; background: #25d366; color: #0b2a17 !important; font-weight: 700; padding: 0.55rem 1rem; border-radius: 8px; text-decoration: none; }
+.area-links { font-size: 0.95rem; color: var(--gray-600); }
+.tamil-line { color: var(--gray-600); font-size: 0.95rem; background: var(--gray-100); border-radius: 8px; padding: 0.6rem 0.9rem; }

@@ -83,33 +83,33 @@
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/properties/gst-road-kattankulathur.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image><image:loc>https://www.thirupathirealestates.com/images/gst-road-kattankulathur-plan.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/properties/omr-thoraipakkam-building.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image><image:loc>https://www.thirupathirealestates.com/images/building-omr-thoraipakkam.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/properties/omr-thoraipakkam-9000-sqft.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/properties/anandham-nagar-building.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/properties/sakthi-garden-plot-70.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image><image:loc>https://www.thirupathirealestates.com/images/sakthi-garden-plot-70.svg</image:loc></image:image>
@@ -124,19 +124,19 @@
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/tools/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/tools/stamp-duty-calculator.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/tools/land-area-converter.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -146,5 +146,23 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image><image:loc>https://www.thirupathirealestates.com/images/thirukazhukundram-field-hills.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.thirupathirealestates.com/areas/thoraipakkam-omr.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thirupathirealestates.com/areas/gst-road-chengalpattu.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thirupathirealestates.com/areas/kancheepuram-uthiramerur.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

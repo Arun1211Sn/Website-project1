@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.thirupathirealestates.com/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://www.thirupathirealestates.com/images/office-thoraipakkam.webp</image:loc></image:image>
@@ -124,19 +124,19 @@
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/tools/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/tools/stamp-duty-calculator.html</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.thirupathirealestates.com/tools/land-area-converter.html</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -164,5 +164,17 @@
     <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thirupathirealestates.com/tools/land-value-calculator.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thirupathirealestates.com/guides/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

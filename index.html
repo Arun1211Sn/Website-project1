@@ -43,196 +43,336 @@
     <link rel="stylesheet" href="/src/styles.css" />
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "RealEstateAgent",
+      "@id": "https://www.thirupathirealestates.com/#business",
+      "name": "Thirupathi S.T.S Groups Realty",
+      "alternateName": [
+        "திருப்பதி எஸ்-டி-எஸ் குரூப்ஸ் ரியாலிட்டி",
+        "Thirupathi STS Groups Riyality",
+        "Thirupathi Real Estates"
+      ],
+      "url": "https://www.thirupathirealestates.com/",
+      "logo": "https://www.thirupathirealestates.com/logo-512.png",
+      "image": [
+        "https://www.thirupathirealestates.com/images/og-thirupathi-sts.jpg",
+        "https://www.thirupathirealestates.com/images/office-thoraipakkam.webp"
+      ],
+      "description": "Chennai real-estate firm for land, plots, farm land and commercial property, with document verification, registration support and site services such as land cleaning, tree cutting and building painting.",
+      "telephone": "+91-9884836380",
+      "contactPoint": [
         {
-          "@type": "RealEstateAgent",
-          "@id": "https://www.thirupathirealestates.com/#business",
-          "name": "Thirupathi S.T.S Groups Realty",
-          "alternateName": ["திருப்பதி எஸ்-டி-எஸ் குரூப்ஸ் ரியாலிட்டி", "Thirupathi STS Groups Riyality", "Thirupathi Real Estates"],
-          "url": "https://www.thirupathirealestates.com/",
-          "logo": "https://www.thirupathirealestates.com/logo-512.png",
-          "image": [
-            "https://www.thirupathirealestates.com/images/og-thirupathi-sts.jpg",
-            "https://www.thirupathirealestates.com/images/office-thoraipakkam.webp"
-          ],
-          "description": "Chennai real-estate firm for land, plots, farm land and commercial property, with document verification, registration support and site services such as land cleaning, tree cutting and building painting.",
+          "@type": "ContactPoint",
           "telephone": "+91-9884836380",
-          "contactPoint": [
-            { "@type": "ContactPoint", "telephone": "+91-9884836380", "contactType": "sales", "availableLanguage": ["English", "Tamil"] },
-            { "@type": "ContactPoint", "telephone": "+91-9444036380", "contactType": "sales", "availableLanguage": ["English", "Tamil"] }
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "No. 4/511, V.O.C Street, Mootaikaran Chavadi, Okkiyam Thoraipakkam",
-            "addressLocality": "Chennai",
-            "addressRegion": "Tamil Nadu",
-            "postalCode": "600097",
-            "addressCountry": "IN"
-          },
-          "openingHoursSpecification": [{
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "09:00",
-            "closes": "19:00"
-          }],
-          "founder": { "@type": "Person", "name": "S. Thirupathi Rajan" },
-          "areaServed": [
-            { "@type": "Place", "name": "Thoraipakkam" },
-            { "@type": "Place", "name": "Old Mahabalipuram Road (OMR), Chennai" },
-            { "@type": "Place", "name": "GST Road, Chennai" },
-            { "@type": "Place", "name": "Kattankulathur" },
-            { "@type": "Place", "name": "Thirukazhukundram" },
-            { "@type": "Place", "name": "Uthiramerur" },
-            { "@type": "City", "name": "Chennai" },
-            { "@type": "AdministrativeArea", "name": "Chengalpattu district" },
-            { "@type": "AdministrativeArea", "name": "Kancheepuram district" }
-          ],
-          "knowsLanguage": ["en", "ta"],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Property and land services",
-            "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Land buying and selling" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential and commercial plots" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Farm land sales" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Building painting" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tree cutting and farm land clearing" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vacant land cleaning and sand filling" } }
-            ]
-          }
-        },
-        {
-          "@type": "ItemList",
-          "@id": "https://www.thirupathirealestates.com/#properties",
-          "name": "Properties listed by Thirupathi S.T.S Groups Realty",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "item": {
-                "@type": "RealEstateListing",
-                "name": "22 Acres on Thirukazhukundram to Chengalpattu Road",
-                "url": "https://www.thirupathirealestates.com/properties/thirukazhukundram-22-acres.html",
-                "contentLocation": {
-                  "@type": "Place",
-                  "name": "Thirukazhukundram, Chengalpattu district"
-                },
-                "offeredBy": {
-                  "@id": "https://www.thirupathirealestates.com/#business"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "item": {
-                "@type": "RealEstateListing",
-                "name": "16 Grounds on GST Road, Kattankulathur",
-                "url": "https://www.thirupathirealestates.com/properties/gst-road-kattankulathur.html",
-                "contentLocation": {
-                  "@type": "Place",
-                  "name": "Kattankulathur, GST Road, Chengalpattu district"
-                },
-                "offeredBy": {
-                  "@id": "https://www.thirupathirealestates.com/#business"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "item": {
-                "@type": "RealEstateListing",
-                "name": "Under-construction Building, OMR Thoraipakkam",
-                "url": "https://www.thirupathirealestates.com/properties/omr-thoraipakkam-building.html",
-                "contentLocation": {
-                  "@type": "Place",
-                  "name": "Thoraipakkam, OMR, Chennai"
-                },
-                "offeredBy": {
-                  "@id": "https://www.thirupathirealestates.com/#business"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 4,
-              "item": {
-                "@type": "RealEstateListing",
-                "name": "9,000 sq ft Land in Thoraipakkam, OMR",
-                "url": "https://www.thirupathirealestates.com/properties/omr-thoraipakkam-9000-sqft.html",
-                "contentLocation": {
-                  "@type": "Place",
-                  "name": "Thoraipakkam, OMR, Chennai"
-                },
-                "offeredBy": {
-                  "@id": "https://www.thirupathirealestates.com/#business"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 5,
-              "item": {
-                "@type": "RealEstateListing",
-                "name": "Building under Construction, Anandham Nagar",
-                "url": "https://www.thirupathirealestates.com/properties/anandham-nagar-building.html",
-                "contentLocation": {
-                  "@type": "Place",
-                  "name": "Anandham Nagar, Thoraipakkam, Chennai"
-                },
-                "offeredBy": {
-                  "@id": "https://www.thirupathirealestates.com/#business"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 6,
-              "item": {
-                "@type": "RealEstateListing",
-                "name": "Sakthi Garden Plot 70, 750 to 3,000 sq ft",
-                "url": "https://www.thirupathirealestates.com/properties/sakthi-garden-plot-70.html",
-                "contentLocation": {
-                  "@type": "Place",
-                  "name": "Sakthi Garden"
-                },
-                "offeredBy": {
-                  "@id": "https://www.thirupathirealestates.com/#business"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 7,
-              "item": {
-                "@type": "RealEstateListing",
-                "name": "100 Acres Contiguous Land off SH-118",
-                "url": "https://www.thirupathirealestates.com/properties/kaithandalam-100-acres.html",
-                "contentLocation": {
-                  "@type": "Place",
-                  "name": "Kaithandalam & Kattuputhur, Uthiramerur, Kancheepuram district"
-                },
-                "offeredBy": {
-                  "@id": "https://www.thirupathirealestates.com/#business"
-                }
-              }
-            }
+          "contactType": "sales",
+          "availableLanguage": [
+            "English",
+            "Tamil"
           ]
         },
         {
-          "@type": "WebSite",
-          "@id": "https://www.thirupathirealestates.com/#website",
-          "url": "https://www.thirupathirealestates.com/",
-          "name": "Thirupathi S.T.S Groups Realty",
-          "inLanguage": "en-IN",
-          "publisher": { "@id": "https://www.thirupathirealestates.com/#business" }
+          "@type": "ContactPoint",
+          "telephone": "+91-9444036380",
+          "contactType": "sales",
+          "availableLanguage": [
+            "English",
+            "Tamil"
+          ]
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "No. 4/511, V.O.C Street, Mootaikaran Chavadi, Okkiyam Thoraipakkam",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "600097",
+        "addressCountry": "IN"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "S. Thirupathi Rajan"
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Thoraipakkam"
+        },
+        {
+          "@type": "Place",
+          "name": "Old Mahabalipuram Road (OMR), Chennai"
+        },
+        {
+          "@type": "Place",
+          "name": "GST Road, Chennai"
+        },
+        {
+          "@type": "Place",
+          "name": "Kattankulathur"
+        },
+        {
+          "@type": "Place",
+          "name": "Thirukazhukundram"
+        },
+        {
+          "@type": "Place",
+          "name": "Uthiramerur"
+        },
+        {
+          "@type": "City",
+          "name": "Chennai"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Chengalpattu district"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Kancheepuram district"
+        },
+        {
+          "@type": "Place",
+          "name": "Sriperumbudur"
+        },
+        {
+          "@type": "Place",
+          "name": "Gummidipoondi"
+        }
+      ],
+      "knowsLanguage": [
+        "en",
+        "ta"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Property and land services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Land buying and selling"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Residential and commercial plots"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Farm land sales"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Building painting"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Tree cutting and farm land clearing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Vacant land cleaning and sand filling"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.thirupathirealestates.com/#properties",
+      "name": "Properties listed by Thirupathi S.T.S Groups Realty",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "RealEstateListing",
+            "name": "17 Acres Industrial Land near Chennai–Bangalore Highway",
+            "url": "https://www.thirupathirealestates.com/properties/sriperumbudur-17-acres.html",
+            "contentLocation": {
+              "@type": "Place",
+              "name": "Vadamangalam village, Sriperumbudur taluk, Kancheepuram district"
+            },
+            "offeredBy": {
+              "@id": "https://www.thirupathirealestates.com/#business"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "RealEstateListing",
+            "name": "15.5 Acres Land at Thervoy Kandigai, Gummidipoondi",
+            "url": "https://www.thirupathirealestates.com/properties/thervoy-kandigai-15-acres.html",
+            "contentLocation": {
+              "@type": "Place",
+              "name": "Thervoy Kandigai village, Gummidipoondi taluk, Tiruvallur district"
+            },
+            "offeredBy": {
+              "@id": "https://www.thirupathirealestates.com/#business"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "RealEstateListing",
+            "name": "22 Acres on Thirukazhukundram to Chengalpattu Road",
+            "url": "https://www.thirupathirealestates.com/properties/thirukazhukundram-22-acres.html",
+            "contentLocation": {
+              "@type": "Place",
+              "name": "Thirukazhukundram, Chengalpattu district"
+            },
+            "offeredBy": {
+              "@id": "https://www.thirupathirealestates.com/#business"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "RealEstateListing",
+            "name": "16 Grounds on GST Road, Kattankulathur",
+            "url": "https://www.thirupathirealestates.com/properties/gst-road-kattankulathur.html",
+            "contentLocation": {
+              "@type": "Place",
+              "name": "Kattankulathur, GST Road, Chengalpattu district"
+            },
+            "offeredBy": {
+              "@id": "https://www.thirupathirealestates.com/#business"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "RealEstateListing",
+            "name": "Under-construction Building, OMR Thoraipakkam",
+            "url": "https://www.thirupathirealestates.com/properties/omr-thoraipakkam-building.html",
+            "contentLocation": {
+              "@type": "Place",
+              "name": "Thoraipakkam, OMR, Chennai"
+            },
+            "offeredBy": {
+              "@id": "https://www.thirupathirealestates.com/#business"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "RealEstateListing",
+            "name": "9,000 sq ft Land in Thoraipakkam, OMR",
+            "url": "https://www.thirupathirealestates.com/properties/omr-thoraipakkam-9000-sqft.html",
+            "contentLocation": {
+              "@type": "Place",
+              "name": "Thoraipakkam, OMR, Chennai"
+            },
+            "offeredBy": {
+              "@id": "https://www.thirupathirealestates.com/#business"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "RealEstateListing",
+            "name": "Building under Construction, Anandham Nagar",
+            "url": "https://www.thirupathirealestates.com/properties/anandham-nagar-building.html",
+            "contentLocation": {
+              "@type": "Place",
+              "name": "Anandham Nagar, Thoraipakkam, Chennai"
+            },
+            "offeredBy": {
+              "@id": "https://www.thirupathirealestates.com/#business"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "RealEstateListing",
+            "name": "Sakthi Garden Plot 70, 750 to 3,000 sq ft",
+            "url": "https://www.thirupathirealestates.com/properties/sakthi-garden-plot-70.html",
+            "contentLocation": {
+              "@type": "Place",
+              "name": "Sakthi Garden"
+            },
+            "offeredBy": {
+              "@id": "https://www.thirupathirealestates.com/#business"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "RealEstateListing",
+            "name": "100 Acres Contiguous Land off SH-118",
+            "url": "https://www.thirupathirealestates.com/properties/kaithandalam-100-acres.html",
+            "contentLocation": {
+              "@type": "Place",
+              "name": "Kaithandalam & Kattuputhur, Uthiramerur, Kancheepuram district"
+            },
+            "offeredBy": {
+              "@id": "https://www.thirupathirealestates.com/#business"
+            }
+          }
         }
       ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.thirupathirealestates.com/#website",
+      "url": "https://www.thirupathirealestates.com/",
+      "name": "Thirupathi S.T.S Groups Realty",
+      "inLanguage": "en-IN",
+      "publisher": {
+        "@id": "https://www.thirupathirealestates.com/#business"
+      }
     }
-    </script>
+  ]
+}
+  </script>
 
     <!-- Google AdSense. The account meta keeps the site verified; the script
          itself (~150 KB) waits until the visitor interacts or the page has been
@@ -262,6 +402,8 @@
     <span class="ticker-label">Updates</span>
     <div class="ticker-track">
       <ul class="ticker-list">
+        <li data-date="2026-11-07"><a href="/properties/sriperumbudur-17-acres.html"><b class="ticker-new">NEW</b>17 acres of industrial land near Sriperumbudur, Chennai–Bangalore Highway. Approval ready for 2.15 lakh sq ft</a></li>
+        <li data-date="2026-11-07"><a href="/properties/thervoy-kandigai-15-acres.html"><b class="ticker-new">NEW</b>15.5 acres red zone land at Thervoy Kandigai, Gummidipoondi, on a 40 ft road</a></li>
         <li data-date="2026-10-21"><a href="/properties/thirukazhukundram-22-acres.html"><b class="ticker-new">NEW</b>22 acres of coconut and mango land on the Thirukazhukundram to Chengalpattu road</a></li>
         <li data-date="2026-10-21"><a href="/properties/kaithandalam-100-acres.html">100 acres in one block off SH-118, Kaithandalam. Single direct owner</a></li>
       </ul>
@@ -359,11 +501,67 @@
         <div class="section-header">
           <p class="section-label">Current Listings</p>
           <h2 class="section-title">Properties for Sale in Chennai</h2>
-          <p class="section-desc">Land and buildings we are handling right now, from OMR Thoraipakkam to GST Road and the Uthiramerur belt. Prices on request; call or WhatsApp for documents and a site visit.</p>
+          <p class="section-desc">Land and buildings we are handling right now, from OMR Thoraipakkam and GST Road to Sriperumbudur, Gummidipoondi and the Uthiramerur belt. Prices on request; call or WhatsApp for documents and a site visit.</p>
         </div>
 
         <p class="area-links"><strong>Browse by area:</strong> <a href="/areas/thoraipakkam-omr.html">Thoraipakkam &amp; OMR</a> · <a href="/areas/gst-road-chengalpattu.html">GST Road &amp; Chengalpattu</a> · <a href="/areas/kancheepuram-uthiramerur.html">Kancheepuram &amp; Uthiramerur</a></p>
         <div class="listings-grid">
+          <article class="listing-card featured wide" id="sriperumbudur-17-acres">
+            <div class="listing-media">
+              <img class="contain" src="/images/sriperumbudur-17-acres-plan.webp" srcset="/images/sriperumbudur-17-acres-plan-480.webp 480w, /images/sriperumbudur-17-acres-plan.webp 1300w" sizes="(max-width: 700px) 92vw, 520px" width="1300" height="1277" loading="lazy" decoding="async"
+                   alt="Survey plan of the 17-acre land near Sriperumbudur with the roads around it" />
+              <div class="listing-badges"><span class="badge badge-new">New</span><span class="badge">Industrial land</span><span class="badge badge-light">17 acres</span></div>
+            </div>
+            <div class="listing-body">
+              <p class="listing-location">Sriperumbudur · Chennai–Bangalore Highway</p>
+              <h3 class="listing-title"><a class="listing-link" href="/properties/sriperumbudur-17-acres.html">17 Acres Industrial Land near Chennai–Bangalore Highway</a></h3>
+              <p class="listing-desc">Converted and filled land beside the new Chennai–Bengaluru expressway, with 700 ft of frontage on a 50 ft road and 550 ft on a 40 ft road. Building approval is ready for about 2.15 lakh sq ft. Company-owned.</p>
+              <dl class="listing-facts">
+                <div><dt>Extent</dt><dd>17 acres</dd></div>
+                <div><dt>Frontage</dt><dd>700 ft + 550 ft</dd></div>
+                <div><dt>Approval</dt><dd>2.15 lakh sq ft</dd></div>
+              </dl>
+              <ul class="listing-points">
+                <li>Regular shape, two road frontages</li>
+                <li>Suited to warehousing, logistics or a factory</li>
+              </ul>
+              <div class="listing-actions">
+                <a class="listing-more" href="/properties/sriperumbudur-17-acres.html">View full details &amp; site plan</a>
+                <a class="btn btn-dark" target="_blank" rel="noopener noreferrer"
+                   href="https://wa.me/919884836380?text=Hi%2C%20I%27m%20interested%20in%20the%2017-acre%20industrial%20land%20near%20Sriperumbudur%20%28listed%20on%20your%20website%29.">WhatsApp Enquiry</a>
+                <a class="listing-map" href="tel:+919884836380">Call 98848 36380</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="listing-card featured wide" id="thervoy-kandigai-15-acres">
+            <div class="listing-media">
+              <img class="contain" src="/images/thervoy-kandigai-15-acres-plan.webp" srcset="/images/thervoy-kandigai-15-acres-plan-480.webp 480w, /images/thervoy-kandigai-15-acres-plan.webp 1400w" sizes="(max-width: 700px) 92vw, 520px" width="1400" height="833" loading="lazy" decoding="async"
+                   alt="FMB sketch of the Thervoy Kandigai land with its approach road to the main road" />
+              <div class="listing-badges"><span class="badge badge-new">New</span><span class="badge">Red zone</span><span class="badge badge-light">15.5 acres</span></div>
+            </div>
+            <div class="listing-body">
+              <p class="listing-location">Thervoy Kandigai · Gummidipoondi, Tiruvallur</p>
+              <h3 class="listing-title"><a class="listing-link" href="/properties/thervoy-kandigai-15-acres.html">15.5 Acres Land at Thervoy Kandigai, Gummidipoondi</a></h3>
+              <p class="listing-desc">About 15.5 acres in the red zone at Thervoy Kandigai, on the way from Kavaraipettai to Gummidipoondi, on a 40 ft road with its own approach road. Price negotiable.</p>
+              <dl class="listing-facts">
+                <div><dt>Extent</dt><dd>15.5 acres</dd></div>
+                <div><dt>Road</dt><dd>40 ft</dd></div>
+                <div><dt>Zone</dt><dd>Red (industrial)</dd></div>
+              </dl>
+              <ul class="listing-points">
+                <li>In the village of the SIPCOT Thervoy Kandigai industrial park</li>
+                <li>Price negotiable with the owner</li>
+              </ul>
+              <div class="listing-actions">
+                <a class="listing-more" href="/properties/thervoy-kandigai-15-acres.html">View full details &amp; site plan</a>
+                <a class="btn btn-dark" target="_blank" rel="noopener noreferrer"
+                   href="https://wa.me/919884836380?text=Hi%2C%20I%27m%20interested%20in%20the%2015.5-acre%20land%20at%20Thervoy%20Kandigai%2C%20Gummidipoondi%20%28listed%20on%20your%20website%29.">WhatsApp Enquiry</a>
+                <a class="listing-map" href="tel:+919884836380">Call 98848 36380</a>
+              </div>
+            </div>
+          </article>
+
           <article class="listing-card featured wide" id="thirukazhukundram-22-acres">
             <div class="listing-media">
               <img src="/images/thirukazhukundram-field-hills.webp" srcset="/images/thirukazhukundram-field-hills-480.webp 480w, /images/thirukazhukundram-field-hills.webp 948w" sizes="(max-width: 700px) 92vw, 520px" width="948" height="1185" loading="lazy" decoding="async"
